@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qmxmh.demo.mapper.QmxHomeMapper" >
+  <resultMap id="BaseResultMap" type="com.qmxmh.demo.pojo.QmxHome" >
+    <id column="hm_id" property="hmId" jdbcType="BIGINT" />
+    <result column="hm_one_type" property="hmOneType" jdbcType="VARCHAR" />
+    <result column="hm_one_name" property="hmOneName" jdbcType="VARCHAR" />
+    <result column="hm_one_content" property="hmOneContent" jdbcType="VARCHAR" />
+    <result column="hm_one_image" property="hmOneImage" jdbcType="VARCHAR" />
+    <result column="hm_one_date" property="hmOneDate" jdbcType="DATE" />
+    <result column="hm_two_name" property="hmTwoName" jdbcType="VARCHAR" />
+    <result column="hm_two_content" property="hmTwoContent" jdbcType="VARCHAR" />
+    <result column="hm_two_date" property="hmTwoDate" jdbcType="DATE" />
+    <result column="hm_url" property="hmUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    hm_id, hm_one_type, hm_one_name, hm_one_content, hm_one_image, hm_one_date, hm_two_name, 
+    hm_two_content, hm_two_date, hm_url
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qmxmh.demo.pojo.QmxHomeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from qmx_home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from qmx_home
+    where hm_id = #{hmId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from qmx_home
+    where hm_id = #{hmId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qmxmh.demo.pojo.QmxHomeExample" >
+    delete from qmx_home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qmxmh.demo.pojo.QmxHome" >
+    insert into qmx_home (hm_id, hm_one_type, hm_one_name, 
+      hm_one_content, hm_one_image, hm_one_date, 
+      hm_two_name, hm_two_content, hm_two_date, 
+      hm_url)
+    values (#{hmId,jdbcType=BIGINT}, #{hmOneType,jdbcType=VARCHAR}, #{hmOneName,jdbcType=VARCHAR}, 
+      #{hmOneContent,jdbcType=VARCHAR}, #{hmOneImage,jdbcType=VARCHAR}, #{hmOneDate,jdbcType=DATE}, 
+      #{hmTwoName,jdbcType=VARCHAR}, #{hmTwoContent,jdbcType=VARCHAR}, #{hmTwoDate,jdbcType=DATE}, 
+      #{hmUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qmxmh.demo.pojo.QmxHome" >
+    insert into qmx_home
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hmId != null" >
+        hm_id,
+      </if>
+      <if test="hmOneType != null" >
+        hm_one_type,
+      </if>
+      <if test="hmOneName != null" >
+        hm_one_name,
+      </if>
+      <if test="hmOneContent != null" >
+        hm_one_content,
+      </if>
+      <if test="hmOneImage != null" >
+        hm_one_image,
+      </if>
+      <if test="hmOneDate != null" >
+        hm_one_date,
+      </if>
+      <if test="hmTwoName != null" >
+        hm_two_name,
+      </if>
+      <if test="hmTwoContent != null" >
+        hm_two_content,
+      </if>
+      <if test="hmTwoDate != null" >
+        hm_two_date,
+      </if>
+      <if test="hmUrl != null" >
+        hm_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hmId != null" >
+        #{hmId,jdbcType=BIGINT},
+      </if>
+      <if test="hmOneType != null" >
+        #{hmOneType,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneName != null" >
+        #{hmOneName,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneContent != null" >
+        #{hmOneContent,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneImage != null" >
+        #{hmOneImage,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneDate != null" >
+        #{hmOneDate,jdbcType=DATE},
+      </if>
+      <if test="hmTwoName != null" >
+        #{hmTwoName,jdbcType=VARCHAR},
+      </if>
+      <if test="hmTwoContent != null" >
+        #{hmTwoContent,jdbcType=VARCHAR},
+      </if>
+      <if test="hmTwoDate != null" >
+        #{hmTwoDate,jdbcType=DATE},
+      </if>
+      <if test="hmUrl != null" >
+        #{hmUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qmxmh.demo.pojo.QmxHomeExample" resultType="java.lang.Integer" >
+    select count(*) from qmx_home
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update qmx_home
+    <set >
+      <if test="record.hmId != null" >
+        hm_id = #{record.hmId,jdbcType=BIGINT},
+      </if>
+      <if test="record.hmOneType != null" >
+        hm_one_type = #{record.hmOneType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmOneName != null" >
+        hm_one_name = #{record.hmOneName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmOneContent != null" >
+        hm_one_content = #{record.hmOneContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmOneImage != null" >
+        hm_one_image = #{record.hmOneImage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmOneDate != null" >
+        hm_one_date = #{record.hmOneDate,jdbcType=DATE},
+      </if>
+      <if test="record.hmTwoName != null" >
+        hm_two_name = #{record.hmTwoName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmTwoContent != null" >
+        hm_two_content = #{record.hmTwoContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hmTwoDate != null" >
+        hm_two_date = #{record.hmTwoDate,jdbcType=DATE},
+      </if>
+      <if test="record.hmUrl != null" >
+        hm_url = #{record.hmUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update qmx_home
+    set hm_id = #{record.hmId,jdbcType=BIGINT},
+      hm_one_type = #{record.hmOneType,jdbcType=VARCHAR},
+      hm_one_name = #{record.hmOneName,jdbcType=VARCHAR},
+      hm_one_content = #{record.hmOneContent,jdbcType=VARCHAR},
+      hm_one_image = #{record.hmOneImage,jdbcType=VARCHAR},
+      hm_one_date = #{record.hmOneDate,jdbcType=DATE},
+      hm_two_name = #{record.hmTwoName,jdbcType=VARCHAR},
+      hm_two_content = #{record.hmTwoContent,jdbcType=VARCHAR},
+      hm_two_date = #{record.hmTwoDate,jdbcType=DATE},
+      hm_url = #{record.hmUrl,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qmxmh.demo.pojo.QmxHome" >
+    update qmx_home
+    <set >
+      <if test="hmOneType != null" >
+        hm_one_type = #{hmOneType,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneName != null" >
+        hm_one_name = #{hmOneName,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneContent != null" >
+        hm_one_content = #{hmOneContent,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneImage != null" >
+        hm_one_image = #{hmOneImage,jdbcType=VARCHAR},
+      </if>
+      <if test="hmOneDate != null" >
+        hm_one_date = #{hmOneDate,jdbcType=DATE},
+      </if>
+      <if test="hmTwoName != null" >
+        hm_two_name = #{hmTwoName,jdbcType=VARCHAR},
+      </if>
+      <if test="hmTwoContent != null" >
+        hm_two_content = #{hmTwoContent,jdbcType=VARCHAR},
+      </if>
+      <if test="hmTwoDate != null" >
+        hm_two_date = #{hmTwoDate,jdbcType=DATE},
+      </if>
+      <if test="hmUrl != null" >
+        hm_url = #{hmUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where hm_id = #{hmId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qmxmh.demo.pojo.QmxHome" >
+    update qmx_home
+    set hm_one_type = #{hmOneType,jdbcType=VARCHAR},
+      hm_one_name = #{hmOneName,jdbcType=VARCHAR},
+      hm_one_content = #{hmOneContent,jdbcType=VARCHAR},
+      hm_one_image = #{hmOneImage,jdbcType=VARCHAR},
+      hm_one_date = #{hmOneDate,jdbcType=DATE},
+      hm_two_name = #{hmTwoName,jdbcType=VARCHAR},
+      hm_two_content = #{hmTwoContent,jdbcType=VARCHAR},
+      hm_two_date = #{hmTwoDate,jdbcType=DATE},
+      hm_url = #{hmUrl,jdbcType=VARCHAR}
+    where hm_id = #{hmId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,68 @@
+spring:
+  freemarker:
+
+    #request�������Ƿ񸲸�controller��model��ͬ����
+    allow-request-override: false
+
+    #�Ƿ�������
+    cache: true
+    #session�������Ƿ񸲸�model��ͬ����
+    allow-session-override: false
+    charset: utf-8
+    content-type: text/html
+    #配置后缀
+    suffix: .ftl
+    #�Ƿ���ģ���λ��
+    check-template-location: true
+    #配置模板所在的地方
+    template-loader-path: classpath:/templates/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #url需要加时区serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/qmxmh?serverTimezone=UTC
+    username: root
+    password: root
+    #配置连接池
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    #页面热部署
+  thymeleaf:
+    cache: true
+
+
+    #类热部署
+  devtools:
+    restart:
+      enabled: true
+      #设置重启的目录
+     # additional-paths: src/main/java
+      #classpath目录下的WEB-INF文件夹内容修改不重启
+     # exclude:  WEB-INF
+
+
+      #输入到控制台
+  output:
+    ansi:
+      enabled: always
+#日志
+logging:
+#  config: classpath:log4j2.yml
+
+  register-shutdown-hook: true
+#配置端口
+server:
+  port: 80
+  error:
+    path: /error
+
+mybatis:
+  #扫描的实体类
+  type-aliases-package: com.qmxmh.demo.pojo
+  #扫描实现接口的xml
+  mapper-locations: classpath:mapping/*.xml
+
+#分页插件
+pagehelper:
+  dialect:
+  reasonable: true
+  support-methods-arguments: true
+  page-size-zero: true
