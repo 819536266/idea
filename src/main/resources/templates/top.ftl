@@ -177,6 +177,7 @@
         继续浏览网站即表示您同意我们的 <a href="http://cn.uniview.com/Home/Privacy_Policy/" target="_blank">Cookie隐私政策</a>及<a href="http://cn.uniview.com/Home/Legal_Privacy/" target="_blank">法律声明</a>。 <span><a href="javascript:closeclick();"> <img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/notice_close.png" class="ppclose" alt=""> </a></span> </p>
 </div>
 <div class="home-container">
+
     <div id="wrapper">
         <div class="wrapper">
             <div class="container">
@@ -204,25 +205,26 @@
                         </div>
                         <div class="menu-list"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/menu.png" alt="" id="nav-toggle">
                             <ul id="nav-phone">
-                                <#list home as homeone>
-                                    <#if (homeone.hmOneType=="home") >
-                                     <li><a href="http://cn.uniview.com/Products/" class="menu">${homeone.hmOneName}</a>
-                                        <#list home as home1>
+                                <#if (home?size>0 && home??)>
+                                    <#list home as homeone>
+                                        <#if (homeone.hmOneType=="home") >
+                                         <li><a href="${homeone.hmUrl}" class="menu">${homeone.hmOneName}</a>
+                                            <#list home as home1>
 
-                                            <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
-                                            <ul>
-                                                    <li>
-                                                        <a title="${home1.hmTwoName}" href="http://cn.uniview.com/Products/Cameras/">${home1.hmTwoName}
-                                                        </a>
-                                                    </li>
-                                            </ul>
+                                                <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
+                                                     <ul>
+                                                        <li>
+                                                            <a title="${home1.hmTwoName}" href="${home1.hmUrl}">${home1.hmTwoName}
+                                                            </a>
+                                                        </li>
+                                                    </ul>
 
-                                            </#if>
-                                        </#list>
-                                     </li>
-                                    </#if>
-                                </#list>
-
+                                                </#if>
+                                            </#list>
+                                         </li>
+                                        </#if>
+                                    </#list>
+                                </#if>
                               <#--  <li><a href="http://cn.uniview.com/Products/" class="menu">产品</a>
 
                                         <li><a title="网络摄像机" href="http://cn.uniview.com/Products/Cameras/">网络摄像机</a>
@@ -569,30 +571,43 @@
 
                     <div class="navi" id="Navi">
                         <div class="toplevel"><a href="http://cn.uniview.com/" class="menu">首页</a></div>
-
+                     <#if (home?size>0 && home??)>
                          <#list home as homeone>
                              <#if (homeone.hmOneType=="home") >
 
-                             <div class="toplevel"><a href="http://cn.uniview.com/Products/" class="menu">${homeone.hmOneName}</a>
+                             <div class="toplevel"><a href="${homeone.hmUrl}" class="menu">${homeone.hmOneName}</a>
+                                 <#--创建变量赋值-->
+                                 <#assign numm=0>
+                                  <#list home as homenum>
+                                   <#if (homenum.hmTwoName?? && homenum.hmOneName==homeone.hmOneName)>
+                                    <#assign numm=numm+1>
+                                   </#if>
+                                    </#list>
+                                 <#--变量为0则没有2级菜单-->
+                                 <#if (numm>0) >
                                  <div class="menu-pro submenu">
-                                    <div class="container">
+                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-sm-4 col-md-2">
-                                                <div class="item">
-                                                    <#list home as home1>
-                                                        <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
-                                                                 <li class="title"><a href="http://cn.uniview.com/Products/Cameras/">${home1.hmTwoName}</a></li>
-                                                        </#if>
-                                                    </#list>
-                                                </div>
-                                            </div>
+                                            <#list home as home1>
+                                                <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
+                                                    <div class="col-sm-4 col-md-2">
+                                                        <div class="item">
+                                                            <ul>
+                                                                <li class="title"><a href="${home1.hmUrl}">${home1.hmTwoName}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </#if>
+                                            </#list>
                                         </div>
                                      </div>
                                   </div>
+                                 </#if>
                               </div>
 
                              </#if>
                          </#list>
+                     </#if>
                         <#--<div class="toplevel"><a href="http://cn.uniview.com/Products/" class="menu">产品</a>
                             <div class="menu-pro submenu">
                                 <div class="container">
@@ -951,133 +966,329 @@
                     <li data-target="#slides" data-slide-to="0" class=""></li>
                     <li data-target="#slides" data-slide-to="1" class="active"></li>
                     <li data-target="#slides" data-slide-to="2" class=""></li>
+
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="item">
-                        <a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802701_140493_0.htm" target="_blank"><img src="qmx/lb01.jpg" class="hidden-xs"><img src="qmx/lb01.jpg" class="visible-xs"></a>
-                    </div>
-                    <div class="item active">
-                        <a href="http://cn.uniview.com/About_Us/News/News_Media/201902/802698_140493_0.htm" target="_blank"><img src="qmx/lb02.jpg" class="hidden-xs"><img src="qmx/lb02.jpg" class="visible-xs"></a>
-                    </div>
-                    <div class="item">
-                        <a href="https://mp.weixin.qq.com/s/OMZU9JK1VQKknpbdben9uA" target="_blank"><img src="qmx/lb03.jpg" class="hidden-xs"><img src="qmx/lb03.jpg" class="visible-xs"></a>
-                    </div>
-
+                    <#--轮播图 -->
+                <#assign num=0/>
+                    <#list home as homlunbo>
+                            <#if (homlunbo.hmOneType=="lunbo")>
+                                <#assign num=num+1 />
+                                <#if (num%2!=0)>
+                                    <div class="item">
+                                        <a href="${homlunbo.hmUrl}" target="_blank"><img src="${homlunbo.hmOneImage}" class="hidden-xs"><img src="${homlunbo.hmOneImage}" class="visible-xs"></a>
+                                    </div>
+                                <#else >
+                                    <div class="item active">
+                                        <a href="${homlunbo.hmUrl}" target="_blank"><img src="${homlunbo.hmOneImage}" class="hidden-xs"><img src="${homlunbo.hmOneImage}" class="visible-xs"></a>
+                                    </div>
+                                </#if>
+                            </#if>
+                    </#list>
                 </div>
                 <div class="homeNewsList">
-                    <div class="newsLabel"><a href="http://cn.uniview.com/About_Us/News/News_Media/">最新新闻</a> |</div>
-                    <div class="newsWrap">
-                        <ul id="HomeNews" style="top: -40px;">
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802723_140493_0.htm">你好，明厨亮灶！宇视严守食品安全防线<span class="date">[2019-03-25]</span></a></li>
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802702_140493_0.htm">宇视2018年报：营收40.7亿元，同比增31.3%<span class="date">[2019-03-18]</span></a></li>
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802701_140493_0.htm">平安南美 宇视守护布宜诺斯艾利斯<span class="date">[2019-03-11]</span></a></li>
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802700_140493_0.htm">超20项专利！宇视洞庭刷新小间距显示屏记录<span class="date">[2019-03-05]</span></a></li>
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201902/802698_140493_0.htm">顶尖城市 超低房价：宇视AI守护保障性住房<span class="date">[2019-02-25]</span></a></li>
-                            <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802723_140493_0.htm">你好，明厨亮灶！宇视严守食品安全防线<span class="date">[2019-03-25]</span></a></li></ul>
-                    </div>
+                <#--轮播条-->
+                    <#if (home?size>0&&home??)>
+                        <#list  home as lunbotiao>
+                            <#if (lunbotiao.hmOneType=="lunbotiao")>
+                               <div class="newsLabel"><a href="http://cn.uniview.com/About_Us/News/News_Media/">最新新闻</a> |</div>
+                                <#list  home as lunbotiao1>
+                                    <div class="newsWrap">
+                                        <ul id="HomeNews" style="top: -40px;">
+                                                <#if (lunbotiao1.hmOneType==lunbotiao.hmId?string)>
+                                                    <li><a href="${lunbotiao1.hmUrl}">${lunbotiao1.hmTwoName}<span class="date">${lunbotiao1.hmTwoDate?date}</span></a></li>
+                                                </#if>
+                                        </ul>
+                                    </div>
+                                </#list>
+                            </#if>
+                        </#list>
+                     <#else>
+                        <div class="newsLabel"><a href="http://cn.uniview.com/About_Us/News/News_Media/">最新新闻</a> |</div>
+                        <div class="newsWrap">
+                            <ul id="HomeNews" style="top: -40px;">
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802723_140493_0.htm">你好，明厨亮灶！宇视严守食品安全防线<span class="date">[2019-03-25]</span></a></li>
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802702_140493_0.htm">宇视2018年报：营收40.7亿元，同比增31.3%<span class="date">[2019-03-18]</span></a></li>
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802701_140493_0.htm">平安南美 宇视守护布宜诺斯艾利斯<span class="date">[2019-03-11]</span></a></li>
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802700_140493_0.htm">超20项专利！宇视洞庭刷新小间距显示屏记录<span class="date">[2019-03-05]</span></a></li>
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201902/802698_140493_0.htm">顶尖城市 超低房价：宇视AI守护保障性住房<span class="date">[2019-02-25]</span></a></li>
+                                <li><a href="http://cn.uniview.com/About_Us/News/News_Media/201903/802723_140493_0.htm">你好，明厨亮灶！宇视严守食品安全防线<span class="date">[2019-03-25]</span></a></li></ul>
+                        </div>
+                    </#if>
                 </div>
             </div>
         </div>
         <div class="homefour">
             <div id="New-Product" class="carousel slide">
-                <h2 class="title">新品推荐</h2>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-05.jpg" alt=""><span>T1S系列宇视智能门锁</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/Products/Cameras/Dome/IR/1080P_Series/HIC6622HX22-IR-U/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-01.jpg" alt=""><span>HIC6622HX22-IR-U光线处理专家</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/About_Us/News/News_Media/201706/799544_140493_0.htm" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-04.jpg" alt=""><span>昆仑二代</span></a></div>
-                    <div class="item active"><a href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/VM5800/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-02.jpg" alt=""><span>新一代可视化报警平台</span></a></div>
-                </div>
-                <div class="itempage up" data-direction="prev"></div>
-                <div class="itempage down" data-direction="next"></div>
+                <#--新品推荐-->
+                <#if (home?size>0&&home??)>
+                    <#list  home as xinpin>
+                        <#if (xinpin.hmOneType=="xinpin")>
+                            <h2 class="title">${xinpin.hmOneName}</h2>
+                            <div class="carousel-inner" role="listbox">
+                                <#assign xinpinnum=0>
+                            <#list home as xinpin1>
+                                <#if (xinpin1.hmOneType==xinpin.hmId?string)>
+                                    <#if xinpinnum==0>
+                                        <div class="item active"><a href="${xinpin1.hmUrl}" alt=""><img src="${xinpin1.hmOneImage}" alt=""><span>${xinpin1.hmTwoName}</span></a></div>
+                                        <#assign xinpinnum=xinpinnum+1>
+                                    <#else>
+                                        <div class="item "><a href="${xinpin1.hmUrl}" alt=""><img src="${xinpin1.hmOneImage}" alt=""><span>${xinpin1.hmTwoName}</span></a></div>
+                                    </#if>
+                                </#if>
+                            </#list>
+                            </div>
+                             <div class="itempage up" data-direction="prev"></div>
+                            <div class="itempage down" data-direction="next"></div>
+                        </#if>
+                    </#list>
+                <#else>
+                    <h2 class="title">新品推荐</h2>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-05.jpg" alt=""><span>T1S系列宇视智能门锁</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/Products/Cameras/Dome/IR/1080P_Series/HIC6622HX22-IR-U/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-01.jpg" alt=""><span>HIC6622HX22-IR-U光线处理专家</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/About_Us/News/News_Media/201706/799544_140493_0.htm" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-04.jpg" alt=""><span>昆仑二代</span></a></div>
+                        <div class="item active"><a href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/VM5800/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/1-02.jpg" alt=""><span>新一代可视化报警平台</span></a></div>
+                    </div>
+
+                    <div class="itempage up" data-direction="prev"></div>
+                    <div class="itempage down" data-direction="next"></div>
+                </#if>
             </div>
             <div id="SMB-Area" class="carousel slide">
-                <h2 class="title">分销专区</h2>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active"><a href="http://fenxiao.uniview.com/cheetah.aspx" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-08.jpg" alt=""><span>猎豹2.0系列</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9315&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-01.jpg" alt=""><span>宇视星光/超星光系列摄像机</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9291&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-02.jpg" alt=""><span>宇视SMB系列经济款NVR</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9227&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-03.jpg" alt=""><span>IPC-B203-IR系列摄像机</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9220&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-04.jpg" alt=""><span>经济型H.265 NVR</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9215&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-05.jpg" alt=""><span>22倍星光球机</span></a></div>
-                    <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9214&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-06.jpg" alt=""><span>国风古韵邂逅西式优雅</span></a></div>
-                </div>
-                <div class="itempage up" data-direction="prev"></div>
-                <div class="itempage down" data-direction="next"></div>
+                <#--分校专区-->
+                <#if (home?size>0&&home??)>
+                    <#list  home as fenxiao>
+                        <#if (fenxiao.hmOneType=="fenxiao")>
+                            <h2 class="title">${fenxiao.hmOneName}</h2>
+                            <div class="carousel-inner" role="listbox">
+                                <#assign fenxiaonum=0>
+                            <#list home as fenxiao1>
+                                <#if (fenxiao1.hmOneType==fenxiao.hmId?string)>
+                                    <#if fenxiaonum==0>
+                                        <div class="item active"><a href="${fenxiao1.hmUrl}" alt=""><img src="${fenxiao1.hmOneImage}" alt=""><span>${fenxiao1.hmTwoName}</span></a></div>
+                                        <#assign fenxiaonum=fenxiaonum+1>
+                                    <#else>
+                                        <div class="item "><a href="${fenxiao1.hmUrl}" alt=""><img src="${fenxiao1.hmOneImage}" alt=""><span>${fenxiao1.hmTwoName}</span></a></div>
+                                    </#if>
+                                </#if>
+                            </#list>
+                            </div>
+                             <div class="itempage up" data-direction="prev"></div>
+                            <div class="itempage down" data-direction="next"></div>
+                        </#if>
+                    </#list>
+                <#else>
+                    <h2 class="title">分销专区</h2>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active"><a href="http://fenxiao.uniview.com/cheetah.aspx" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-08.jpg" alt=""><span>猎豹2.0系列</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9315&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-01.jpg" alt=""><span>宇视星光/超星光系列摄像机</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9291&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-02.jpg" alt=""><span>宇视SMB系列经济款NVR</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9227&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-03.jpg" alt=""><span>IPC-B203-IR系列摄像机</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9220&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-04.jpg" alt=""><span>经济型H.265 NVR</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9215&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-05.jpg" alt=""><span>22倍星光球机</span></a></div>
+                        <div class="item"><a href="http://fenxiao.uniview.com/newsshow.aspx?id=9214&amp;bid=b" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2-06.jpg" alt=""><span>国风古韵邂逅西式优雅</span></a></div>
+                    </div>
+                    <div class="itempage up" data-direction="prev"></div>
+                    <div class="itempage down" data-direction="next"></div>
+                </#if>
             </div>
             <div id="HomeTopTen" class="carousel slide">
-                <h2 class="title">十大案例</h2>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801634_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-01.jpg" alt=""><span>[国家托付]人民大会堂及十九大保障</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801640_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-02.jpg" alt=""><span>[守护C919]商飞生产厂房、总装基地</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801639_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-03.jpg" alt=""><span>[普教安全]北京400所幼儿园</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801636_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-04.jpg" alt=""><span>[雪亮工程]北京亦庄</span></a></div>
-                    <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801642_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-05.jpg" alt=""><span>[公共出行]广州三条全高清智能地铁新线</span></a></div>
-                </div>
-                <div class="itempage up" data-direction="prev"></div>
-                <div class="itempage down" data-direction="next"></div>
+                <#--案例-->
+                <#if (home?size>0&&home??)>
+                    <#list  home as anli>
+                        <#if (anli.hmOneType=="anli")>
+                            <h2 class="title">${anli.hmOneName}</h2>
+                            <div class="carousel-inner" role="listbox">
+                                <#assign anlinum=0>
+                            <#list home as anli1>
+                                <#if (anli1.hmOneType==anli.hmId?string)>
+                                    <#if anlinum==0>
+                                        <div class="item active"><a href="${anli1.hmUrl}" alt=""><img src="${anli1.hmOneImage}" alt=""><span>${anli1.hmTwoName}</span></a></div>
+                                        <#assign anlinum=anlinum+1>
+                                    <#else>
+                                        <div class="item "><a href="${anli1.hmUrl}" alt=""><img src="${anli1.hmOneImage}" alt=""><span>${anli1.hmTwoName}</span></a></div>
+                                    </#if>
+                                </#if>
+                            </#list>
+                            </div>
+                             <div class="itempage up" data-direction="prev"></div>
+                            <div class="itempage down" data-direction="next"></div>
+                        </#if>
+                    </#list>
+                <#else>
+                    <h2 class="title">十大案例</h2>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801634_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-01.jpg" alt=""><span>[国家托付]人民大会堂及十九大保障</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801640_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-02.jpg" alt=""><span>[守护C919]商飞生产厂房、总装基地</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801639_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-03.jpg" alt=""><span>[普教安全]北京400所幼儿园</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801636_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-04.jpg" alt=""><span>[雪亮工程]北京亦庄</span></a></div>
+                        <div class="item"><a href="http://cn.uniview.com/Solutions/Case/2018/201807/801642_140446_0.htm"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/2017-05.jpg" alt=""><span>[公共出行]广州三条全高清智能地铁新线</span></a></div>
+                    </div>
+                    <div class="itempage up" data-direction="prev"></div>
+                    <div class="itempage down" data-direction="next"></div>
+                </#if>
             </div>
             <div id="Recruitment" class="carousel slide">
-                <h2 class="title">招聘咨询</h2>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active"><a href="https://talent.uniview.com/wt/uniview/web/index" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/4-02.jpg" alt=""><span>2019宇视科技校园招聘全面起航</span></a></div>
-                </div>
+                 <#if (home?size>0&&home??)>
+                     <#list  home as zhaopin>
+                         <#if (zhaopin.hmOneType=="zhaopin")>
+                            <h2 class="title">${zhaopin.hmOneName}</h2>
+                            <div class="carousel-inner" role="listbox">
+                                <#assign zhaopinnum=0>
+                            <#list home as zhaopin1>
+                                <#if (zhaopin1.hmOneType==zhaopin.hmId?string)>
+                                    <#if zhaopinnum==0>
+                                        <div class="item active"><a href="${zhaopin1.hmUrl}" alt=""><img src="${zhaopin1.hmOneImage}" alt=""><span>${zhaopin1.hmTwoName}</span></a></div>
+                                        <#assign zhaopinnum=zhaopinnum+1>
+                                    <#else>
+                                        <div class="item "><a href="${zhaopin1.hmUrl}" alt=""><img src="${zhaopin1.hmOneImage}" alt=""><span>${zhaopin1.hmTwoName}</span></a></div>
+                                    </#if>
+                                </#if>
+                            </#list>
+                            </div>
+                             <div class="itempage up" data-direction="prev"></div>
+                            <div class="itempage down" data-direction="next"></div>
+                         </#if>
+                     </#list>
+                 <#else>
+                    <h2 class="title">招聘咨询</h2>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active"><a href="https://talent.uniview.com/wt/uniview/web/index" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/4-02.jpg" alt=""><span>2019宇视科技校园招聘全面起航</span></a></div>
+                    </div>
+                 </#if>
             </div>
         </div>
         <div class="homefour2">
             <div class="serviceBox sht">
                 <div class="body">
-                    <a href="http://cn.uniview.com/pub/2019/cw-vote/default.html" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b04.jpg" alt="">
-                        <div class="ms" style="width:100%;">
-                            <div class="text">公司活动</div>
-                            <p class="p">宇视七周年迎春年会</p>
-                        </div>
-                    </a><div style="position:absolute; left:40px; bottom:40px;"><a href="http://cn.uniview.com/pub/2019/cw-vote/default.html" target="_blank"></a><a href="http://cn.uniview.com/About_Us/Company_activities/" style="color:#fff; text-decoration:none;">查看更多&gt;&gt;</a></div>
-
+                    <#--公司活动-->
+                    <#if (home?size>0&&home??)>
+                        <#list  home as jieshao01>
+                            <#if (jieshao01.hmOneType=="jieshao01")>
+                                <a href="${jieshao01.hmUrl}" target="_blank"><img src="${jieshao01.hmOneImage}" alt="">
+                                    <div class="ms" style="width:100%;">
+                                        <div class="text">${jieshao01.hmOneName}</div>
+                                        <p class="p">${jieshao01.hmOneContent}</p>
+                                    </div>
+                                     <#--</a><div style="position:absolute; left:40px; bottom:40px;"><a href="${gongsihuodong.hmUrl}" target="_blank"></a><a href="http://cn.uniview.com/About_Us/Company_activities/" style="color:#fff; text-decoration:none;">查看更多&gt;&gt;</a></div>-->
+                            </#if>
+                        </#list>
+                    <#else>
+                        <a href="http://cn.uniview.com/pub/2019/cw-vote/default.html" target="_blank"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b04.jpg" alt="">
+                            <div class="ms" style="width:100%;">
+                                <div class="text">公司活动</div>
+                                <p class="p">宇视七周年迎春年会</p>
+                            </div>
+                        </a><div style="position:absolute; left:40px; bottom:40px;"><a href="http://cn.uniview.com/pub/2019/cw-vote/default.html" target="_blank"></a><a href="http://cn.uniview.com/About_Us/Company_activities/" style="color:#fff; text-decoration:none;">查看更多&gt;&gt;</a></div>
+                    </#if>
                 </div>
             </div>
             <div class="serviceBox">
                 <div class="body">
                     <div class="rup">
-                        <a href="http://cn.uniview.com/MiniSite/Unisee/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b02.jpg" alt="">
-                            <div class="ms">
-                                <div class="text">赋能工程</div>
-                                <p class="p">增强开放能力、降低开发难度、提供更有力的支撑等措施，赋予合作伙伴更多的增值能力，共建安防业务生态圈的系统工程。</p>
-                            </div>
-                        </a>
+                        <#--介绍-->
+                        <#if (home?size>0&&home??)>
+                            <#list  home as jieshao02>
+                                <#if (jieshao02.hmOneType=="jieshao02")>
+                                    <a href="${jieshao02.hmUrl}"><img src="${jieshao02.hmOneImage}" alt="">
+                                        <div class="ms">
+                                            <div class="text">${jieshao02.hmOneName}</div>
+                                            <p class="p">${jieshao02.hmOneContent}</p>
+                                        </div>
+                                    </a>
+                                </#if>
+                            </#list>
+                        <#else>
+                            <a href="http://cn.uniview.com/MiniSite/Unisee/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b02.jpg" alt="">
+                                <div class="ms">
+                                    <div class="text">赋能工程</div>
+                                    <p class="p">增强开放能力、降低开发难度、提供更有力的支撑等措施，赋予合作伙伴更多的增值能力，共建安防业务生态圈的系统工程。</p>
+                                </div>
+                            </a>
+                        </#if>
                     </div>
                     <div class="rdown">
-                        <a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b03.jpg" alt="">
-                            <div class="ms">
-                                <div class="text">培训认证</div>
-                                <p class="p">具有完全的自主知识产权，专注于客户技术和技能的提升，已成为安防行业权威的培训认证品牌。</p>
-                            </div>
-                        </a>
+                    <#--介绍-->
+                            <#if (home?size>0&&home??)>
+                                <#list  home as jieshao03>
+                                    <#if (jieshao03.hmOneType=="jieshao03")>
+                                    <a href="${jieshao03.hmUrl}"><img src="${jieshao03.hmOneImage}" alt="">
+                                        <div class="ms">
+                                            <div class="text">${jieshao03.hmOneName}</div>
+                                            <p class="p">${jieshao03.hmOneContent}</p>
+                                        </div>
+                                    </a>
+                                    </#if>
+                                </#list>
+                            <#else>
+                                <a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/b03.jpg" alt="">
+                                    <div class="ms">
+                                        <div class="text">培训认证</div>
+                                        <p class="p">具有完全的自主知识产权，专注于客户技术和技能的提升，已成为安防行业权威的培训认证品牌。</p>
+                                    </div>
+                                </a>
+                            </#if>
                     </div>
                 </div>
             </div>
         </div>
         <div class="homeaboutus">
-            <h3>关于我们</h3>
-            <p class="desc">中国视频监控行业的领导者<br>坚持定位于产品及解决方案提供商<br><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/" style="font-size:14px;">了解更多&gt;&gt;</a></p>
-            <ul class="rank clearfix">
-                <li class="r1"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/rank1.png" alt=""></li>
+            <#if (home?size>0&&home??)>
+                <#list  home as xinxi>
+                    <#if xinxi.hmOneType=="xinxi">
+                        <h3>${xinxi.hmOneName}</h3>
+                        <p class="desc">${xinxi.hmOneContent}<a href="${xinxi.hmUrl}" style="font-size:14px;">了解更多&gt;&gt;</a></p>
+                    </#if>
+                </#list>
+            <#else>
+                <h3>荣誉信息</h3>
+                <p class="desc">中国视频监控行业的领导者<br>坚持定位于产品及解决方案提供商<br><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/" style="font-size:14px;">了解更多&gt;&gt;</a></p>
+            </#if>
+            <#--<ul class="rank clearfix">
+                <#list  home as shuliang>
+                    <#if shuliang.hmOneType=="shuliang">
+                        <li class="r${shuliang_index}"><img src="${shuliang.hmOneImage}" alt=""></li>
+                    </#if>
+                </#list>
+                &lt;#&ndash;<li class="r1"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/rank1.png" alt=""></li>
                 <li class="r2"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/rank2.png" alt=""></li>
-                <li class="r3"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/rank3.png" alt=""></li>
-            </ul>
+                <li class="r3"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/rank3.png" alt=""></li>&ndash;&gt;
+            </ul>-->
             <ul class="anli clearfix">
-                <li class="r1"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c1.png" alt=""><br><strong>625</strong>所<br>平安高校</li>
+                <#list  home as jixiao>
+                    <#if jixiao.hmOneType=="jixiao">
+                        <li class="r${jixiao_index}"><img src="${jixiao.hmOneImage}" alt=""><br><strong>${jixiao.hmTwoContent}</strong>${jixiao.hmOneName}</li>
+                    </#if>
+                </#list>
+                <#--<li class="r1"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c1.png" alt=""><br><strong>625</strong>所<br>平安高校</li>
                 <li class="r2"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c2.png" alt=""><br><strong>50</strong>个<br>机场</li>
                 <li class="r3"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c3.png" alt=""><br><strong>680</strong>余个<br>平安城市</li>
                 <li class="r4"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c4.png" alt=""><br><strong>350</strong>余个<br>智能交通项目</li>
                 <li class="r5"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c5.png" alt=""><br><strong>200</strong>余家<br>三甲医院</li>
-                <li class="r6"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c6.png" alt=""><br><strong>400</strong>余家<br>大型企业</li>
+                <li class="r6"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/home_c6.png" alt=""><br><strong>400</strong>余家<br>大型企业</li>-->
             </ul>
         </div>
         <div class="gaph50"></div>
         <div class="footer">
             <div class="flink clearfix">
                 <div class="linkItemBox clearfix">
-                    <ul>
+             <#--       底部-->
+                    <#if (home?size>0&&home??)>
+                        <#list  home as floor>
+                            <#if floor.hmOneType=="floor">
+                            <ul>
+                                    <li class="title">${floor.hmOneName}</li>
+                                    <#list  home as floor1>
+                                        <#if (floor1.hmOneType==floor.hmId?string)>
+                                            <li><a href="${floor1.hmUrl}" target="_self">${floor1.hmTwoName}</a></li>
+                                        </#if>
+                                    </#list>
+                            </ul>
+                            </#if>
+                        </#list>
+                    <#else>
+
                         <li class="title">按访问者</li>
                         <li><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/" target="_self">工程师</a></li>
                         <li><a href="https://talent.uniview.com/wt/uniview/web/index" target="_blank">考生</a></li>
@@ -1117,6 +1328,7 @@
                         <li><a href="http://cn.uniview.com/Unisee/">Unisee专区</a></li>
                         <li><a href="http://cn.uniview.com/Security/Lab/">宇视安全实验室</a></li>
                     </ul>
+                    </#if>
                 </div>
                 <div class="fqr">
                     <div class="wsa"> <a href="javascript:void(0);" class="wx">微信</a><a href="http://weibo.com/u/2491989963" class="wb" target="_blank" title="微博">微博</a><a href="http://pub.uniview.com/ys_121218/default.html" class="app" title="APP" target="_blank">APP</a><a href="http://cn.uniview.com/Home/EDM/" class="dzb" target="_blank" title="订阅电子报">订阅电子报</a> </div>
@@ -1129,7 +1341,22 @@
         </div>
         <script src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/menu_xiala.js" type="text/javascript"></script>
         <div class="copyright">
-            <a href="http://cn.uniview.com/Home/Site_Map/">站点地图</a> | <a href="http://cn.uniview.com/About_Us/Contact_Us/">联系我们</a> | <a href="http://cn.uniview.com/Home/Legal_Privacy/">法律声明</a>  | <a href="http://cn.uniview.com/Home/Privacy_Policy/">隐私政策</a>  | <span>版权所有 2011-2019 浙江宇视科技有限公司。保留一切权利。</span> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802004032" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" class="beian"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/ga.png" style="float:left;">浙公网安备 33010802004032号</a>
+
+           <#-- 底部-->
+            <#if (home?size>0&&home??)>
+                <#list  home as end>
+                    <#if end.hmOneType=="lianxiwomen">
+                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
+                    </#if>
+                    <#if end.hmOneType=="falvshengming">
+                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
+                    </#if>
+                    <#if end.hmOneType=="yinsizhengce">
+                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
+                    </#if>
+                </#list>
+            </#if>
+             <#--<a href="http://cn.uniview.com/About_Us/Contact_Us/">联系我们</a> | <a href="http://cn.uniview.com/Home/Legal_Privacy/">法律声明</a>  | <a href="http://cn.uniview.com/Home/Privacy_Policy/">隐私政策</a>  | --><span>版权所有 河南企明星电子科技有限公司。保留一切权利。</span> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802004032" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" class="beian"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/ga.png" style="float:left;">Copyright 2018 -  <a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备17002894号</a>
             <span style="display:none;"><script src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/stat.php" language="JavaScript"></script><script src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/core.php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=4346284" target="_blank" title="站长统计"><img src="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/pic.gif" vspace="0" hspace="0" border="0"></a></span>
             <span class="pagetop" onclick="scroll(0,0)" title="返回顶部"></span>
         </div>

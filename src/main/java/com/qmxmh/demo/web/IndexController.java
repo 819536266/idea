@@ -16,7 +16,7 @@ public class IndexController {
     @Autowired
     private HomeService HomeService;
     @RequestMapping("/{page}")
-    public String index(@PathVariable String page, Model model){
+    public String index(@PathVariable String page, Model model ){
         List<QmxHome> home = HomeService.getHome();
         System.out.println(home);
         model.addAttribute("home",home);

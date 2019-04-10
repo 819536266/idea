@@ -5,9 +5,7 @@
     <title>Title</title>
 </head>
     <body>
-        <#list hello as name>
-            ${name}
-        </#list>
+
 
     </body>
 </html>

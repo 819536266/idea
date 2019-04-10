@@ -1,18 +1,14 @@
 spring:
   freemarker:
 
-    #request�������Ƿ񸲸�controller��model��ͬ����
-    allow-request-override: false
+    allow-request-override: true
 
-    #�Ƿ�������
     cache: true
-    #session�������Ƿ񸲸�model��ͬ����
-    allow-session-override: false
+    allow-session-override: true
     charset: utf-8
     content-type: text/html
     #配置后缀
     suffix: .ftl
-    #�Ƿ���ģ���λ��
     check-template-location: true
     #配置模板所在的地方
     template-loader-path: classpath:/templates/
