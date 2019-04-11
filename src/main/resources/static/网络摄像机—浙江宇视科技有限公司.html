@@ -1,0 +1,1271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0039)http://cn.uniview.com/Products/Cameras/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>网络摄像机—浙江宇视科技有限公司</title>
+<!--meta http-equiv="Cache-Control" content="max-age=604800,public" /-->
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="keywords" content="网络摄像机,高清摄像机,宇视科技摄像机,uniview摄像机,宇视摄像机,网络摄像机,IPC,高清IPC,球机,半球,枪机,红外一体机">
+<meta name="description" content="了解与宇视科技（Uniview）摄像机相关的信息，包括摄像机产品的技术特点、选型指南、应用指南、订购信息、产品特点、产品规格、产品尺寸、典型应用以及相关下载等。">
+<link rel="shortcut icon" href="http://cn.uniview.com/tres/images/favicon.ico">
+<link rel="stylesheet" href="网络摄像机—浙江宇视科技有限公司_files/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="网络摄像机—浙江宇视科技有限公司_files/bootstrap-theme.css" type="text/css">
+<link rel="stylesheet" href="网络摄像机—浙江宇视科技有限公司_files/common_20181102.css" type="text/css">
+<link rel="stylesheet" href="网络摄像机—浙江宇视科技有限公司_files/carousel-fade.css" type="text/css">
+<link rel="stylesheet" href="网络摄像机—浙江宇视科技有限公司_files/media_20181102.css" type="text/css">
+<script src="网络摄像机—浙江宇视科技有限公司_files/jquery-1.10.1.min.js.下载" type="text/javascript"></script>
+<script src="网络摄像机—浙江宇视科技有限公司_files/bootstrap.min.js.下载" type="text/javascript"></script>
+<script src="网络摄像机—浙江宇视科技有限公司_files/common.js.下载" type="text/javascript"></script>
+<script src="网络摄像机—浙江宇视科技有限公司_files/menu.js.下载" type="text/javascript"></script>
+<script src="网络摄像机—浙江宇视科技有限公司_files/base.js.下载" type="text/javascript"></script>
+<script language="javascript">
+  var firstSelectedCss = "firstTitle";
+  var secondSelectedCss = "secondTitle";
+  var thirdSelectedCss = "threeTitle";
+  var currentID = 140452;  //在这里设置当前频道ID
+  $(document).ready(function() {
+    $("#sideBar>ul>li>ul").hide(); //隐藏一级频道 
+     $("#sideBar>ul>li>ul>li>ul").hide();//隐藏二级频道
+     Select(currentID);
+  });
+  function Select(index)
+  {
+    var currentLi = $("#tab_"+index);
+    
+    if($("#tab_"+index).children(".subNav").html() != null)//表示选中一级频道
+    {
+      currentLi.addClass(firstSelectedCss);
+    }
+    
+    if($("#tab_"+index).parent(".subNav").html() != null)//表示选中二级频道
+    {
+      currentLi.parents(".treeNavTitle").addClass(firstSelectedCss); //设置一级导航样式
+      currentLi.addClass(secondSelectedCss); //设置二级导航样式
+    }
+    
+    if($("#tab_"+index).children("ul").html() == null)//表示选中三级频道
+    {
+      currentLi.parents(".treeNavTitle").addClass(firstSelectedCss); //设置一级导航样式
+      currentLi.parent().parent("li").addClass(secondSelectedCss); //设置二级导航样式
+      currentLi.addClass(thirdSelectedCss);  //设置三级导航样式
+    }
+          
+    $("#sideBar>ul>li>ul").hide();      //隐藏一级频道
+    $("#sideBar>ul>li>ul>li>ul").hide();  //隐藏二级频道
+    currentLi.children("ul").show();  //显示子频道
+    currentLi.parents(".subNav").show(); //显示父的顶级频道
+    currentLi.parent("ul").show(); //显示父二级频道
+  }
+</script>
+</head>
+<body style="">
+<div id="wrapper">
+<div class="wrapper">
+    <div class="container">
+      <div class="header" id="Header">
+        <p class="logo"><a href="http://cn.uniview.com/default.htm"><img src="网络摄像机—浙江宇视科技有限公司_files/logo.png" alt="宇视科技" width="145" height="30"></a></p>
+        <div class="header-opt">
+          <div class="hlink"><span id="login"><a href="http://cn.uniview.com/Home/Login/Default.htm" target="_blank" title="登录">登录</a> ｜ <a href="http://cn.uniview.com/Home/Registration/" target="_blank" title="注册">注册</a></span>
+            <script type="text/javascript" src="网络摄像机—浙江宇视科技有限公司_files/showUser.js.下载"></script>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="http://en.uniview.com/" style="cursor:hand" target="_blank" title="English">English</a> ]</div>
+          <div class="search">
+            <div class="form">
+              <input name="k" id="keyword" type="text" value="" class="word">
+              <a class="btn" href="javascript:void(0)" onclick="searchAction(&#39;keyword&#39;)">搜索</a> </div>
+          </div>
+        </div>
+        <div class="phone-nav visible-xs-block visible-sm-block">
+          <div class="search-btn">
+            <div class="search-btn" id="search-toggle"></div>
+            <div class="search-form" id="search-form">
+            <div class="container body">
+            <input name="k" id="keyword2" type="text" value="">
+            <a href="javascript:void(0)" onclick="searchAction(&#39;keyword2&#39;)"></a>
+            </div>
+            </div>
+          </div>
+          <div class="menu-list"><img src="网络摄像机—浙江宇视科技有限公司_files/menu.png" alt="" id="nav-toggle">
+            <ul id="nav-phone">
+            <li><a href="http://cn.uniview.com/Products/" class="menu">产品</a>
+              <ul>
+<li><a title="网络摄像机" href="http://cn.uniview.com/Products/Cameras/">网络摄像机</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Box/">枪式网络摄像机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Bullet/">筒型网络摄像机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/">半球网络摄像机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Dome/">球型网络摄像机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/">小型云台一体机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Integration/">机芯</a></div>
+<div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/">防爆摄像机</a></div>
+<div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/">热成像摄像机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Peripheral/">摄像机外设</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Cameras/Analog/Fixed_Dome/">模拟摄像机</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="物联网" href="http://cn.uniview.com/Products/IoT/Gateway/">物联网</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/IoT/Gateway/">网关</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/IoT/Sensor/">传感器</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/IoT/Landmarks/">地标器</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="交警电子警察" href="http://cn.uniview.com/Products/Intelligent_Traffic/">交警电子警察</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Electric_Alarm/">电警卡口抓拍机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Detector/">视频流量检测器</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Intelligent_Dome/">智能交通球机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Host/">路口终端</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Accessovies/">配件</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/VM/Platform/">智能交通平台</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="智慧停车场" href="http://cn.uniview.com/Products/Park/Entrance/">智慧停车场</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Park/Entrance/">出入口抓拍机</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Park/Detector/">车位检测器</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Park/Accessories/">配件</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="大屏产品" href="http://cn.uniview.com/Products/Screen/LCD/Splice/">大屏产品</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/">LCD</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Screen/LED/Small_Pitch/">LED</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="显控产品" href="http://cn.uniview.com/Products/Display/Screen/Platform/">显控产品</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Display/Screen/Platform/">大屏显控</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Display/DC/">解码器</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Display/EC/">编码器</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Display/Accessories/">配件</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="NVR" href="http://cn.uniview.com/Products/NVR/">NVR</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/NVR/General/">通用NVR</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="套装产品" href="http://cn.uniview.com/Products/Kit/Wireless/">套装产品</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Kit/Wireless/">无线套装</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="存储与计算" href="http://cn.uniview.com/Products/Net_storage/">存储与计算</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Net_storage/IPSAN/">IPSAN</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Net_storage/Fusion/Cloud/">融合存储</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="管理平台" href="http://cn.uniview.com/Products/VM/">管理平台</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/VM/Universal_Monitor/AIO/">通用监控平台</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/VM/Common_platform/Management/">行业通用平台</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/VM/Public_Security/Management/">公安平台</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/">安防平台</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="网络与安全" href="http://cn.uniview.com/Products/Network_Security/Switches/">网络与安全</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Network_Security/Switches/">交换机</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="客户端软件" href="http://cn.uniview.com/Products/Client_Software/PC/">客户端软件</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Client_Software/PC/">PC客户端软件</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Client_Software/Mobile/">移动客户端软件</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="智能装备" href="http://cn.uniview.com/Products/Smart_Equipment/Door/">智能装备</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Smart_Equipment/Door/">人脸速通门</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="智能锁" href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/">智能锁</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/">指纹锁</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+              </ul>
+            </li>
+            <li><a href="http://cn.uniview.com/Solutions/" class="menu">解决方案</a>
+              <ul>
+<li><a title="行业解决方案" href="http://cn.uniview.com/Solutions/Industry_solutions/Peaceful_city/">行业解决方案</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/iVS_IP_Surveillance/">iVS IP监控通用解决方案</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Peaceful_city/">平安城市</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Enterprise/">企业</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Education/">教育</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Intelligent_building/">智能建筑</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Financial/">金融</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Network/">广域联网</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Intelligent_Traffic/">智能交通</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="工程商解决方案" href="http://cn.uniview.com/Solutions/Engineering_solutions/Supermarket/">工程商解决方案</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Solutions/Engineering_solutions/Supermarket/">商超连锁</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="十大案例" href="http://cn.uniview.com/Solutions/Case/">十大案例</a></li>
+              </ul>
+            </li>
+            <li><a href="http://cn.uniview.com/Service/Service_Training/" class="menu">服务与培训</a>
+              <ul>
+<li><a title="渠道服务" href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/">渠道服务</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/">服务资质认证</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Service_Products/Technical_Sustainment/">服务产品</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Engineering_Data/">工程相关资料</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Support/">技术支持</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="培训认证" href="http://cn.uniview.com/Service/Service_Training/Training_Certification/">培训认证</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Training_News/">培训公告</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Certification_System/">培训认证体系</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Institution/">培训机构</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Training_Tools/Candidates_Service/">培训工具</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="下载中心" href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/">下载中心</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/">手册下载</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Download/Tools/">设备软件下载</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Download/Client/">客户端软件下载</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Download/SDK/1/">SDK开发</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Service/Service_Training/Download/Problem/Camera/">常见问题处理</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="维修与更换" href="http://cn.uniview.com/Service/Service_Training/Maintain_Replacing/Repairment/">维修与更换</a></li>
+<li><a title="条码防伪查询" href="http://cn.uniview.com/Service/Service_Training/VerificationQuery/">条码防伪查询</a></li>
+<li><a title="条码维保查询" href="http://cn.uniview.com/Service/Service_Training/Maintenance_Query/">条码维保查询</a></li>
+<li><a title="安全应急响应" href="http://cn.uniview.com/Security/Lab/">安全应急响应</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Security/Notice/">安全通告</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Security/Process/">漏洞响应流程</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Security/Report/">漏洞上报</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Security/Lab/">宇视安全实验室</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+              </ul>
+            </li>
+            <li><a href="http://cn.uniview.com/Partners/Partner/" class="menu">合作伙伴</a>
+              <ul>
+<li><a title="合作伙伴公告" href="http://cn.uniview.com/Partners/Partner/Channel_news/">合作伙伴公告</a></li>
+<li><a title="加盟宇视科技" href="http://cn.uniview.com/Partners/Partner/Join_uniview/Channel_Introduction/">加盟宇视科技</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Channel_Introduction/">渠道体系介绍</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Distribution_system/">经销商渠道体系架构</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Project_system/">工程商渠道体系介绍</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Overseas_channel_system/">海外渠道体系介绍</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/">服务资质认证</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="合作伙伴在线认证" href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Channel_certification/Registered_dealer/">合作伙伴在线认证</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Channel_certification/Registered_dealer/">合作伙伴认证</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Service_certification/Qualification_application/">服务资质认证流程</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="Unisee宇视解决方案赋能工程" href="http://cn.uniview.com/Unisee/">Unisee宇视解决方案赋能工程</a></li>
+              </ul>
+            </li>
+            <li><a href="http://ysisp.uniview.com/" class="menu" target="_blank">供应商平台</a>
+              <ul>
+<li><a href="http://ysisp.uniview.com/" target="_blank">供应商登录</a></li>
+<li><a href="http://ysisp.uniview.com/Register.aspx" target="_blank">供应商自荐</a></li>
+              </ul>
+            </li>
+            <li><a href="http://cn.uniview.com/About_Us/" class="menu">关于我们</a>
+              <ul>
+<li><a title="公司信息" href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/">公司信息</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/">关于宇视</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/Brand/">品牌理念</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/History/">发展历程</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/SCM/">供应链</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/Service_System/">服务体系</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/R_D_Team/">研发团队</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/Awards/">奖项荣誉</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Video/Product_series/">公司视频</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="活动专题" href="http://cn.uniview.com/About_Us/Company_activities/">活动专题</a></li>
+<li><a title="新闻中心" href="http://cn.uniview.com/About_Us/News/News_Media/">新闻中心</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/News/News_Media/">公司新闻</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/News/Media_Boardcast/">媒体报道</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="公司刊物" href="http://cn.uniview.com/About_Us/Company_Publication/Industry_Publication/">公司刊物</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Publication/Uniview_Corporate_Brochure/2017_Road_Of_Precision_Manufacturing/">公司手册</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Publication/Industry_Publication/">行业刊物</a></div>
+      <div class="col-xs-6"><a href="http://cn.uniview.com/About_Us/Company_Publication/Uniview_magazine/">宇视杂志</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="人才招聘" href="https://talent.uniview.com/wt/uniview/web/index">人才招聘</a>
+<ul>
+  <li>
+    <div class="row">
+      <div class="col-xs-6"><a href="https://talent.uniview.com/wt/uniview/web/index/social" target="_blank">社会招聘</a></div>
+      <div class="col-xs-6"><a href="https://talent.uniview.com/wt/uniview/web/index/campus">校园招聘</a></div>
+      <div class="col-xs-6"><a href="https://talent.uniview.com/wt/uniview/web/index/interns" target="_blank">实习生招聘</a></div>
+    </div>
+  </li>
+</ul>
+</li>
+<li><a title="投诉建议" href="http://cn.uniview.com/About_Us/Suggestion/">投诉建议</a></li>
+<li><a title="联系我们" href="http://cn.uniview.com/About_Us/Contact_Us/">联系我们</a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0)" class="menu">[选择语言]</a>
+              <ul>
+<li><a href="http://en.uniview.com/" target="_blank">English</a></li>
+              </ul>
+            </li>
+            </ul>
+          </div>
+        </div>
+        <div class="navi" id="Navi">
+          <div class="toplevel"><a href="http://cn.uniview.com/" class="menu">首页</a></div>
+          <div class="toplevel"><a href="http://cn.uniview.com/Products/" class="menu">产品</a>
+            <div class="menu-pro submenu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/Cameras/">网络摄像机</a></li>
+              <li><a title="枪式网络摄像机" href="http://cn.uniview.com/Products/Cameras/Box/">枪式网络摄像机</a></li>
+              <li><a title="筒型网络摄像机" href="http://cn.uniview.com/Products/Cameras/Bullet/">筒型网络摄像机</a></li>
+              <li><a title="半球网络摄像机" href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/">半球网络摄像机</a></li>
+              <li><a title="球型网络摄像机" href="http://cn.uniview.com/Products/Cameras/Dome/">球型网络摄像机</a></li>
+              <li><a title="云台&amp;一体机" href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/">云台&amp;一体机</a></li>
+              <li class="more"><a href="http://cn.uniview.com/Products/Cameras/">更多&gt;&gt;</a></li>
+                    </ul>
+                    <ul>
+                      <li class="title"><a href="http://cn.uniview.com/Products/Display/Screen/Platform/">显控产品</a></li>
+<li><a href="http://cn.uniview.com/Products/Display/Screen/Platform/" title="大屏显控">大屏显控</a></li>
+<li><a href="http://cn.uniview.com/Products/Display/DC/" title="解码器">解码器</a></li>
+<li><a href="http://cn.uniview.com/Products/Display/EC/" title="编码器">编码器</a></li>
+<li><a href="http://cn.uniview.com/Products/Display/Accessories/" title="配件">配件</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/IoT/Gateway/">物联网 </a></li>
+<li><a href="http://cn.uniview.com/Products/IoT/Gateway/" title="网关">网关</a></li>
+<li><a href="http://cn.uniview.com/Products/IoT/Sensor/" title="传感器">传感器</a></li>
+<li><a href="http://cn.uniview.com/Products/IoT/Landmarks/" title="地标器">地标器</a></li>
+                    </ul>
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/Net_storage/">存储与计算</a></li>
+              <li><a href="http://cn.uniview.com/Products/Net_storage/Technical_Characteristics/" title="技术特点">技术特点</a></li>
+              <li><a href="http://cn.uniview.com/Products/Net_storage/Selection_Guide/" title="选型指南">选型指南</a></li>
+<li><a href="http://cn.uniview.com/Products/Net_storage/IPSAN/" title="IPSAN">IPSAN</a></li>
+<li><a href="http://cn.uniview.com/Products/Net_storage/Fusion/Cloud/" title="融合存储">融合存储</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/">交警电子警察 </a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Electric_Alarm/" title="电警卡口抓拍机">电警卡口抓拍机</a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Detector/" title="视频流量检测器">视频流量检测器</a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Intelligent_Dome/" title="智能交通球机">智能交通球机</a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Host/" title="路口终端">路口终端</a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Accessovies/" title="配件">配件</a></li>
+<li><a href="http://cn.uniview.com/Products/Intelligent_Traffic/VM/Platform/" title="智能交通平台">智能交通平台</a></li>
+                    </ul>
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/VM/">管理平台</a></li>
+              <li><a title="通用监控平台" href="http://cn.uniview.com/Products/VM/Universal_Monitor/AIO/">通用监控平台</a></li>
+              <li><a title="行业通用平台" href="http://cn.uniview.com/Products/VM/Common_platform/Management/">行业通用平台</a></li>
+              <li><a title="公安平台" href="http://cn.uniview.com/Products/VM/Public_Security/Management/">公安平台</a></li>
+              <li><a title="安防平台" href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/">安防平台</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/Park/Entrance/">智慧停车场 </a></li>
+<li><a href="http://cn.uniview.com/Products/Park/Entrance/" title="出入口抓拍机">出入口抓拍机</a></li>
+<li><a href="http://cn.uniview.com/Products/Park/Detector/" title="车位检测器">车位检测器</a></li>
+<li><a href="http://cn.uniview.com/Products/Park/Accessories/" title="配件">配件</a></li>
+                    </ul>
+                    <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/Products/Network_Security/Switches/">网络与安全</a></li>
+<li><a href="http://cn.uniview.com/Products/Network_Security/Switches/" title="交换机">交换机</a></li>
+<li><a href="http://cn.uniview.com/Products/Network_Security/Wireless/" title="无线网桥">无线网桥</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+              <li class="title"><a href="http://cn.uniview.com/Products/NVR/">NVR</a></li>
+<li><a href="http://cn.uniview.com/Products/NVR/General/" title="通用NVR">通用NVR</a></li>
+<li><a href="http://cn.uniview.com/Products/NVR/Accessovies/" title="配件">配件</a></li>
+              <li class="title" style="margin-top:10px;"><a href="http://cn.uniview.com/Products/Kit/Wireless/">套装产品</a></li>
+<li><a href="http://cn.uniview.com/Products/Kit/Wireless/" title="无线套装">无线套装</a></li>
+                    </ul>
+                    <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/Products/Client_Software/PC/">客户端软件 </a></li>
+<li><a title="PC客户端软件" href="http://cn.uniview.com/Products/Client_Software/PC/">PC客户端软件</a></li>
+<li><a title="移动客户端软件" href="http://cn.uniview.com/Products/Client_Software/Mobile/">移动客户端软件</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                    <ul>
+               <li class="title"><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/">大屏产品</a></li>
+<li><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/" title="LCD">LCD</a></li>
+<li><a href="http://cn.uniview.com/Products/Screen/LED/Small_Pitch/" title="LED">LED</a></li>
+                    </ul>
+                    <ul style="margin-bottom:20px; height:auto;">
+                      <li class="title"><a href="http://cn.uniview.com/Products/Smart_Equipment/Door/">智能装备 </a></li>
+<li><a href="http://cn.uniview.com/Products/Smart_Equipment/Door/" title="人脸速通门">人脸速通门</a></li>
+<li><a href="http://cn.uniview.com/Products/Smart_Equipment/Terminal/General/" title="人脸识别终端">人脸识别终端</a></li>
+<li><a href="http://cn.uniview.com/Products/Smart_Equipment/Intercom/ACM/" title="可视对讲设备">可视对讲设备</a></li>
+                    </ul>
+                    <ul style="height:auto;">
+                      <li class="title"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/">智能锁 </a></li>
+<li><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/" title="指纹锁">指纹锁</a></li>
+                    </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toplevel"><a href="http://cn.uniview.com/Solutions/" class="menu">解决方案</a>
+            <div class="menu-solution submenu" style="display: none;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-3 col-md-2 col-md-offset-1">
+                    <div class="item">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Solutions/Industry_solutions/Peaceful_city/">行业解决方案</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Peaceful_city/" title="平安城市">平安城市</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Project/" title="雪亮工程">雪亮工程</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Prison/" title="司法监狱">司法监狱</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Rail/" title="轨道交通">轨道交通</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Highway/" title="高速公路">高速公路</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Airport/" title="机场">机场</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Education/" title="教育">教育</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Medical/" title="卫生医疗">卫生医疗</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Enterprise/" title="企业">企业</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Industry_solutions/Intelligent_building/" title="智能建筑">智能建筑</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 col-md-2">
+                    <div class="item" style="height:180px;">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Solutions/Engineering_solutions/Supermarket/">工程商解决方案</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Engineering_solutions/Supermarket/" title="商超连锁">商超连锁</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Engineering_solutions/Entrance/" title="出入口">出入口</a></li>
+<li><a href="http://cn.uniview.com/Solutions/Engineering_solutions/Villa/" title="智能别墅">智能别墅</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-7">
+                    <div class="item2"><a href="http://cn.uniview.com/Solutions/Case/"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_solution_02.jpg" alt="">十大案例</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toplevel"><a href="http://cn.uniview.com/Service/Service_Training/" class="menu">服务与培训</a>
+            <div class="menu-service submenu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                      <ul>
+              <li class=" title"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/">渠道服务</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/" title="服务资质认证">服务资质认证</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Service_Products/Technical_Sustainment/" title="服务产品">服务产品</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Engineering_Data/" title="工程相关资料">工程相关资料</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/YS_Service/Support/" title="技术支持">技术支持</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/">培训认证</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Training_News/" title="培训公告">培训公告</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/exam/" title="UCE-BASE考试">UCE-BASE考试</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Certification_System/" title="培训认证体系">培训认证体系</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Institution/" title="培训机构">培训机构</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Online_Training/" title="在线培训">在线培训</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/Training_Tools/Candidates_Service/" title="培训工具">培训工具</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/">下载中心</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/" title="手册下载">手册下载</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Tools/" title="设备软件下载">设备软件下载</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Client/" title="客户端软件下载">客户端软件下载</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/SDK/1/" title="SDK开发">SDK开发</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Problem/Camera/" title="常见问题处理">常见问题处理</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item">
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/Service/Service_Training/Maintain_Replacing/Repairment/">维修与更换</a></li>
+                      </ul>
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/Service/Service_Training/Authorize_License/">License授权</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Authorize_License/Achieve_License/" title="License首次激活">License首次激活</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Authorize_License/License_Enlarge_Apply/" title="License扩容激活">License扩容激活</a></li>
+                      </ul>
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Security/Lab/">宇视安全实验室</a></li>
+                        <li>&nbsp;</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                    <div class="item2"><a href="http://cn.uniview.com/Service/Service_Training/VerificationQuery/" style="margin-bottom:15px;"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_service_01.jpg" alt="">条码防伪查询</a> <a href="http://cn.uniview.com/Service/Service_Training/Maintenance_Query/"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_service_02.jpg" alt="">条码维保查询</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toplevel"><a href="http://cn.uniview.com/Partners/Partner/" class="menu">合作伙伴</a>
+            <div class="menu-partner submenu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 col-md-3 col-md-offset-1">
+                    <div class="item">
+                      <ul style="margin-bottom:10px;">
+                        <li class="title"><a href="http://cn.uniview.com/Partners/Partner/Channel_news/">合作伙伴公告</a></li>
+                      </ul>
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Channel_Introduction/">加盟宇视科技</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Channel_Introduction/" title="渠道体系介绍">渠道体系介绍</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Distribution_system/" title="经销商渠道体系架构">经销商渠道体系架构</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Project_system/" title="工程商渠道体系介绍">工程商渠道体系介绍</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Overseas_channel_system/" title="海外渠道体系介绍">海外渠道体系介绍</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/" title="服务资质认证">服务资质认证</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-3">
+                    <div class="item">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Channel_certification/Registered_dealer/">合作伙伴在线认证</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Channel_certification/Registered_dealer/" title="合作伙伴认证">合作伙伴认证</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Channel_online_certification/Service_certification/Qualification_application/" title="服务资质认证流程">服务资质认证流程</a></li>
+                      </ul>
+                      </div>
+                  </div>
+                  <div class="col-sm-4 col-md-4">
+                    <div class="item2"><a href="http://fenxiao.uniview.com/" style="margin-bottom:15px;" target="_blank"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_partner_02.jpg" alt="">分销专区</a> <a href="http://cn.uniview.com/Unisee/"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_partner_03.jpg" alt="">Unisee宇视解决方案赋能工程</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toplevel"><a href="http://ysisp.uniview.com/" class="menu">供应商平台</a>
+            <div class="menu-supplier submenu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4 col-md-2 col-md-offset-3 col-sm-offset-2">
+                    <div class="item">
+                      <ul style="margin-bottom:10px;">
+                        <li class="title"><a href="http://ysisp.uniview.com/" target="_blank">供应商登录</a></li>
+                      </ul>
+                      <ul style="margin-bottom:10px;">
+                        <li class="title"><a href="http://ysisp.uniview.com/Register.aspx" target="_blank">供应商自荐</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-2">
+                    <div class="item2"> <a href="http://ysisp.uniview.com/Register.aspx" target="_blank"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_supplier_01.jpg" alt="">供应商自荐</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toplevel"><a href="http://cn.uniview.com/About_Us/" class="menu">关于我们</a>
+            <div class="menu-aboutus submenu">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <div class="item">
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/">公司信息 </a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/" title="关于宇视">关于宇视</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Brand/" title="品牌理念">品牌理念</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/History/" title="发展历程">发展历程</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/SCM/" title="供应链">供应链</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Service_System/" title="服务体系">服务体系</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/R_D_Team/" title="研发团队">研发团队</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Awards/" title="奖项荣誉">奖项荣誉</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Video/Product_series/" title="公司视频">公司视频</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Brand_Resource/" title="品牌资源">品牌资源</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <div class="item">
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/About_Us/News/News_Media/">新闻中心 </a></li>
+              <li><a href="http://cn.uniview.com/About_Us/News/News_Media/">公司新闻 </a></li>
+              <li><a href="http://cn.uniview.com/About_Us/News/Media_Boardcast/">媒体报道 </a></li>
+                      </ul>
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/About_Us/Company_Publication/Industry_Publication/">公司刊物 </a></li>
+              <li><a href="http://cn.uniview.com/About_Us/Company_Publication/Uniview_Corporate_Brochure/2017_Road_Of_Precision_Manufacturing/">公司手册 </a></li>
+              <li><a href="http://cn.uniview.com/About_Us/Company_Publication/Industry_Publication/">行业刊物 </a></li>
+              <li><a href="http://cn.uniview.com/About_Us/Company_Publication/Uniview_magazine/">宇视杂志 </a></li>
+                      </ul>
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/About_Us/Company_activities/">活动专题 </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <div class="item">
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="https://talent.uniview.com/wt/uniview/web/index">人才招聘 </a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/social" title="社会招聘">社会招聘</a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/campus" title="校园招聘">校园招聘</a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/interns" title="实习生招聘">实习生招聘</a></li>
+                      </ul>
+                      <ul style="margin-bottom:10px;">
+              <li class="title"><a href="http://cn.uniview.com/About_Us/Suggestion/">投诉建议 </a></li>
+                      </ul>
+                      <ul>
+              <li class="title"><a href="http://cn.uniview.com/About_Us/Contact_Us/">联系我们 </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-md-3">
+                    <div class="item2"> <a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/"><img src="网络摄像机—浙江宇视科技有限公司_files/navi_about_01.jpg" alt="">宇视科技</a> <span>是IP网络监控的首创者和领先者。秉承深厚的IT技术积累、坚持全面的开放合作，以高品质产品为核心，以不断创新、不断超越为路径，以比肩德国之精工制造为目标，快速行进在通往全球视频监控领域领导者的路上。</span> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+function searchAction(id){
+  var keyword = $.trim($("#"+id).val());
+  if (keyword == "" || keyword == "全站搜索"){
+    alert("请输入搜索关键词！");
+    return false;
+  }
+  location.href= "http://search.uniview.com/search.aspx?k=" + encodeURI(keyword);
+}
+$("#keyword,#keyword2").keydown(function(e){
+var curKey = e.which, id = $(this).attr("id")
+if(curKey == 13){
+searchAction(id);
+}
+});
+</script>
+<div class="container">
+<div class="crumbs">
+<h1 class="breadTitle">网络摄像机</h1>
+<ol class="breadcrumb">
+<a class="blue3" href="http://cn.uniview.com/">首页</a><img src="网络摄像机—浙江宇视科技有限公司_files/arrow.gif" border="0"><a class="blue3" href="http://cn.uniview.com/Products/">产品</a><img src="网络摄像机—浙江宇视科技有限公司_files/arrow.gif" border="0">
+</ol>
+</div>
+</div>
+<div class="mbl_banner visible-xs"><img border="0" src="网络摄像机—浙江宇视科技有限公司_files/20170502_1618120_2_759425_140445_0.jpg"></div>
+<div class="container middlebody">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9 col-md-9 col-right">
+      <div class="mainContent">
+        <div id="detailContent">
+          <div class="photo hidden-xs"><a href="http://cn.uniview.com/Topics/IPC/" target="_blank"><img src="网络摄像机—浙江宇视科技有限公司_files/ipc.jpg" alt="超感IPC系列——全新方式诠释“视，适，智，质”"></a></div>
+          <div class="photo hidden-xs"><img border="0" src="网络摄像机—浙江宇视科技有限公司_files/20170502_1618121_1_732542_140445_0.jpg"></div>
+<h2 class="sortTitle">产品类型</h2>
+  <div class="product_list">
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Box/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_box.jpg" alt="枪式网络摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Box/">枪式网络摄像机</a></h3>
+      <ul class="clearfix">
+<li><a href="http://cn.uniview.com/Products/Cameras/Box/#~series0">8MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Box/#~series1">6MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Box/#~series2">3MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Box/#~series3">2MP</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Bullet/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_bullet.jpg" alt="筒型网络摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Bullet/">筒型网络摄像机</a></h3>
+      <ul class="clearfix">
+<li><a href="http://cn.uniview.com/Products/Cameras/Bullet/#~series0">6MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Bullet/#~series1">5MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Bullet/#~series2">4MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Bullet/#~series3">2MP</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_fixed_dome.jpg" alt="半球网络摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/">半球网络摄像机</a></h3>
+      <ul class="clearfix">
+<li><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/#~series0">8MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/#~series1">5MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/#~series2">4MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/#~series3">3MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/#~series4">2MP</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Dome/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_dome.jpg" alt="球型网络摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Dome/">球型网络摄像机</a></h3>
+      <ul class="clearfix">
+<li><a href="http://cn.uniview.com/Products/Cameras/Dome/#~series0">8MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Dome/#~series1">6MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Dome/#~series2">3MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Dome/#~series3">2MP</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_ptz.jpg" alt="云台&amp;一体机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/">云台&amp;一体机</a></h3>
+      <ul class="clearfix">
+<li class="single"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/">小型云台一体机</a></li>
+<li class="single"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Medium/">中型快速云台一体机</a></li>
+<li class="single"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Heavy/">重载云台一体机</a></li>
+<li class="single"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Zoom_Camera/">机芯一体机</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Linkage/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_linkage.jpg" alt="多目联动网络摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Linkage/">多目联动网络摄像机</a></h3>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Integration/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_integration.jpg" alt="机芯"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Integration/">机芯</a></h3>
+      <ul class="clearfix">
+<li><a href="http://cn.uniview.com/Products/Cameras/Integration/#~series0">8MP</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Integration/#~series1">2MP</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Peripheral/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_peripheral.jpg" alt="摄像机外设"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Peripheral/">摄像机外设</a></h3>
+      <ul class="clearfix">
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series0">防护罩</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series1">枪机支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series2">球机支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series3">半球支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series4">筒机支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series5">通用支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series6">自制支架</a></li>
+            <li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series7">镜头</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series8">电源适配器</a></li>
+<li><a href="http://cn.uniview.com/Products/Cameras/Peripheral/#~series9">拾音器</a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/"><img src="网络摄像机—浙江宇视科技有限公司_files/explosion-proof.jpg" alt="防爆摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/">防爆摄像机</a></h3>
+      </div>
+    </div>
+    <div class="item clearfix">
+      <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/"><img src="网络摄像机—浙江宇视科技有限公司_files/thermal.jpg" alt="热成像摄像机"></a></div>
+      <div class="sort">
+      <h3><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/">热成像摄像机</a></h3>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+<div id="sideBar">
+    <ul id="treeNav">
+<li class="channel_title"> 产品</li>
+      <li id="tab_140452" class="treeNavTitle firstTitle"><a href="http://cn.uniview.com/Products/Cameras/" title=""><strong>网络摄像机</strong></a>
+        <ul class="subNav" style="display: block;">
+<li id="tab_153896"><a href="http://cn.uniview.com/Products/Cameras/Box/" title="">枪式网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_153897"><a href="http://cn.uniview.com/Products/Cameras/Bullet/" title="">筒型网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_153898"><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/" title="">半球网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_153899"><a href="http://cn.uniview.com/Products/Cameras/Dome/" title="">球型网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_183785"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/" title="">云台&amp;一体机</a>
+	<ul style="display: none;">
+<li id="tab_205908"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/" title="">小型云台一体机</a></li>
+<li id="tab_205909"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Medium/" title="">中型快速云台一体机</a></li>
+<li id="tab_171262"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Zoom_Camera/" title="">机芯一体机</a></li>
+</ul>
+</li>
+<li id="tab_213600"><a href="http://cn.uniview.com/Products/Cameras/Linkage/" title="">多目联动网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_167159"><a href="http://cn.uniview.com/Products/Cameras/Integration/" title="">机芯</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_159486"><a href="http://cn.uniview.com/Products/Cameras/Peripheral/" title="">摄像机外设</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205930"><a href="http://cn.uniview.com/Products/Cameras/Analog/Fixed_Dome/" title="">模拟摄像机</a>
+	<ul style="display: none;">
+<li id="tab_205932"><a href="http://cn.uniview.com/Products/Cameras/Analog/Fixed_Dome/" title="">半球模拟摄像机</a></li>
+</ul>
+</li>
+<li id="tab_209888"><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/" title="">防爆摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_212953"><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/" title="">热成像摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_205460" class="treeNavTitle"><a href="http://cn.uniview.com/Products/IoT/Gateway/" title=""><strong>物联网</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_205461"><a href="http://cn.uniview.com/Products/IoT/Gateway/" title="">网关</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_208014"><a href="http://cn.uniview.com/Products/IoT/Sensor/" title="">传感器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_209564"><a href="http://cn.uniview.com/Products/IoT/Landmarks/" title="">地标器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_161598" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/" title=""><strong>交警电子警察</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_161599"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Electric_Alarm/" title="">电警卡口抓拍机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_206282"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Detector/" title="">视频流量检测器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_202331"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Intelligent_Dome/" title="">智能交通球机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_167232"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Host/" title="">路口终端</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_167267"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/Accessovies/" title="">配件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_167258"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/VM/Platform/" title="">智能交通平台</a>
+	<ul style="display: none;">
+<li id="tab_206195"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/VM/Platform/" title="">管理平台</a></li>
+<li id="tab_206194"><a href="http://cn.uniview.com/Products/Intelligent_Traffic/VM/Analysis/" title="">交通智能分析</a></li>
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_205951" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Park/Entrance/" title=""><strong>智慧停车场</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_205952"><a href="http://cn.uniview.com/Products/Park/Entrance/" title="">出入口抓拍机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205953"><a href="http://cn.uniview.com/Products/Park/Detector/" title="">车位检测器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205955"><a href="http://cn.uniview.com/Products/Park/Accessories/" title="">配件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_205933" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/" title=""><strong>大屏产品</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_205934"><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/" title="">LCD</a>
+	<ul style="display: none;">
+<li id="tab_205937"><a href="http://cn.uniview.com/Products/Screen/LCD/Splice/" title="">拼接屏</a></li>
+<li id="tab_205938"><a href="http://cn.uniview.com/Products/Screen/LCD/Monitor/" title="">监视器</a></li>
+<li id="tab_213599"><a href="http://cn.uniview.com/Products/Screen/LCD/Whiteboard/" title="">交互式电子白板</a></li>
+</ul>
+</li>
+<li id="tab_205936"><a href="http://cn.uniview.com/Products/Screen/LED/Small_Pitch/" title="">LED</a>
+	<ul style="display: none;">
+<li id="tab_205939"><a href="http://cn.uniview.com/Products/Screen/LED/Small_Pitch/" title="">小间距</a></li>
+<li id="tab_205942"><a href="http://cn.uniview.com/Products/Screen/LED/Traffic/" title="">交通诱导屏</a></li>
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_145163" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Display/Screen/Platform/" title=""><strong>显控产品</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_191322"><a href="http://cn.uniview.com/Products/Display/Screen/Platform/" title="">大屏显控</a>
+	<ul style="display: none;">
+<li id="tab_205947"><a href="http://cn.uniview.com/Products/Display/Screen/Platform/" title="">视频综合平台</a></li>
+<li id="tab_205948"><a href="http://cn.uniview.com/Products/Display/Screen/Unit/" title="">视频综合单元</a></li>
+<li id="tab_205949"><a href="http://cn.uniview.com/Products/Display/Screen/Controller/" title="">拼接控制器</a></li>
+</ul>
+</li>
+<li id="tab_205944"><a href="http://cn.uniview.com/Products/Display/DC/" title="">解码器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205945"><a href="http://cn.uniview.com/Products/Display/EC/" title="">编码器</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205946"><a href="http://cn.uniview.com/Products/Display/Accessories/" title="">配件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_145172" class="treeNavTitle"><a href="http://cn.uniview.com/Products/NVR/" title=""><strong>NVR</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_206191"><a href="http://cn.uniview.com/Products/NVR/General/" title="">通用NVR</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_207548"><a href="http://cn.uniview.com/Products/NVR/Accessovies/" title="">配件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_211432" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Kit/Wireless/" title=""><strong>套装产品</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_211433"><a href="http://cn.uniview.com/Products/Kit/Wireless/" title="">无线套装</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_145174" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Net_storage/" title=""><strong>存储与计算</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_205958"><a href="http://cn.uniview.com/Products/Net_storage/IPSAN/" title="">IPSAN</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205959"><a href="http://cn.uniview.com/Products/Net_storage/Fusion/Cloud/" title="">融合存储</a>
+	<ul style="display: none;">
+<li id="tab_205960"><a href="http://cn.uniview.com/Products/Net_storage/Fusion/Cloud/" title="">云存储</a></li>
+<li id="tab_194474"><a href="http://cn.uniview.com/Products/Net_storage/Fusion/Service/" title="">存储服务</a></li>
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_145177" class="treeNavTitle"><a href="http://cn.uniview.com/Products/VM/" title=""><strong>管理平台</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_187294"><a href="http://cn.uniview.com/Products/VM/Universal_Monitor/AIO/" title="">通用监控平台</a>
+	<ul style="display: none;">
+<li id="tab_206196"><a href="http://cn.uniview.com/Products/VM/Universal_Monitor/AIO/" title="">监控管理一体机</a></li>
+</ul>
+</li>
+<li id="tab_194393"><a href="http://cn.uniview.com/Products/VM/Common_platform/Management/" title="">行业通用平台</a>
+	<ul style="display: none;">
+<li id="tab_194473"><a href="http://cn.uniview.com/Products/VM/Common_platform/Management/" title="">管理平台</a></li>
+<li id="tab_194394"><a href="http://cn.uniview.com/Products/VM/Common_platform/Map_server/" title="">视图可视化服务</a></li>
+<li id="tab_194641"><a href="http://cn.uniview.com/Products/VM/Common_platform/Big_data/" title="">大数据服务</a></li>
+</ul>
+</li>
+<li id="tab_194916"><a href="http://cn.uniview.com/Products/VM/Public_Security/Management/" title="">公安平台</a>
+	<ul style="display: none;">
+<li id="tab_206199"><a href="http://cn.uniview.com/Products/VM/Public_Security/Management/" title="">公安管理平台</a></li>
+<li id="tab_206200"><a href="http://cn.uniview.com/Products/VM/Public_Security/Access/" title="">数据接入服务</a></li>
+<li id="tab_206201"><a href="http://cn.uniview.com/Products/VM/Public_Security/APP/" title="">APP</a></li>
+</ul>
+</li>
+<li id="tab_187293"><a href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/" title="">安防平台</a>
+	<ul style="display: none;">
+<li id="tab_206202"><a href="http://cn.uniview.com/Products/VM/Security_Platform/Platform/" title="">安防管理平台</a></li>
+<li id="tab_194720"><a href="http://cn.uniview.com/Products/VM/Security_Platform/3D_Map/" title="">3D地图服务</a></li>
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_200794" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Network_Security/Switches/" title=""><strong>网络与安全</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_200796"><a href="http://cn.uniview.com/Products/Network_Security/Switches/" title="">交换机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_209413"><a href="http://cn.uniview.com/Products/Network_Security/Wireless/" title="">无线网桥</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_187014" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Client_Software/PC/" title=""><strong>客户端软件</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_198764"><a href="http://cn.uniview.com/Products/Client_Software/PC/" title="">PC客户端软件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_198765"><a href="http://cn.uniview.com/Products/Client_Software/Mobile/" title="">移动客户端软件</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_212449" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/" title=""><strong>智能锁</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_212450"><a href="http://cn.uniview.com/Products/Smart_Lock/Fingerprint/" title="">指纹锁</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_210815" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Smart_Equipment/Door/" title=""><strong>智能装备</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_210816"><a href="http://cn.uniview.com/Products/Smart_Equipment/Door/" title="">人脸速通门</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_213206"><a href="http://cn.uniview.com/Products/Smart_Equipment/Terminal/General/" title="">人脸识别终端</a>
+	<ul style="display: none;">
+<li id="tab_213245"><a href="http://cn.uniview.com/Products/Smart_Equipment/Terminal/General/" title="">通用人脸识别终端</a></li>
+</ul>
+</li>
+<li id="tab_214029"><a href="http://cn.uniview.com/Products/Smart_Equipment/Intercom/ACM/" title="">可视对讲设备</a>
+	<ul style="display: none;">
+<li id="tab_214030"><a href="http://cn.uniview.com/Products/Smart_Equipment/Intercom/ACM/" title="">门禁一体机</a></li>
+<li id="tab_214031"><a href="http://cn.uniview.com/Products/Smart_Equipment/Intercom/Indoor/" title="">室内机</a></li>
+</ul>
+</li>
+        </ul>
+      </li>        
+      <li id="tab_199745" class="treeNavTitle"><a href="http://cn.uniview.com/Products/Professional/Cameras/" title=""><strong>专业产品</strong></a>
+        <ul class="subNav" style="display: none;">
+<li id="tab_199949"><a href="http://cn.uniview.com/Products/Professional/Cameras/" title="">网络摄像机</a>
+	<ul style="display: none;">
+</ul>
+</li>
+<li id="tab_205173"><a href="http://cn.uniview.com/Products/Professional/Storage/" title="">存储</a>
+	<ul style="display: none;">
+</ul>
+</li>
+        </ul>
+      </li>        
+	 </ul>
+</div>
+    </div>
+  </div>
+</div>
+<span class="category-name" style="display:none;">,a产品栏目a, </span>
+<span class="category-big" style="display:none;">,a网络摄像机a, </span>
+<div class="gaph50"></div>
+<div class="footer">
+    <div class="flink clearfix">
+        <div class="linkItemBox clearfix">
+            <ul>
+                <li class="title">按访问者</li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/" target="_self">工程师</a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index" target="_blank">考生</a></li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Channel_Introduction/" target="_self">合作伙伴</a></li>
+            </ul>
+            <ul>
+                <li class="title">服务与培训</li>
+<li><a href="http://cn.uniview.com/Partners/Partner/Join_uniview/Serve_Intelligence/" title="渠道服务">渠道服务</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Training_Certification/" title="培训认证">培训认证</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Download/Software_and_Manual/" title="下载中心">下载中心</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Maintain_Replacing/Repairment/" title="维修与更换">维修与更换</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Authorize_License/" title="License授权">License授权</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/VerificationQuery/" title="条码防伪查询">条码防伪查询</a></li>
+<li><a href="http://cn.uniview.com/Service/Service_Training/Maintenance_Query/" title="条码维保查询">条码维保查询</a></li>
+            </ul>
+            <ul>
+                <li class="title">人才招聘</li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/social" title="社会招聘">社会招聘</a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/campus" title="校园招聘">校园招聘</a></li>
+<li><a href="https://talent.uniview.com/wt/uniview/web/index/interns" title="实习生招聘">实习生招聘</a></li>
+            </ul>
+            <ul>
+                <li class="title">公司信息</li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Introduce/" title="关于宇视">关于宇视</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Brand/" title="品牌理念">品牌理念</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/History/" title="发展历程">发展历程</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/SCM/" title="供应链">供应链</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Service_System/" title="服务体系">服务体系</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/R_D_Team/" title="研发团队">研发团队</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Awards/" title="奖项荣誉">奖项荣誉</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Company_Video/Product_series/" title="公司视频">公司视频</a></li>
+<li><a href="http://cn.uniview.com/About_Us/Company_Information/Brand_Resource/" title="品牌资源">品牌资源</a></li>
+            </ul>
+            <ul>
+                <li class="title">常用链接</li>
+                <li><a href="http://fenxiao.uniview.com/" target="_blank">SMB专区</a></li>
+                <li><a href="http://cn.uniview.com/Unisee/">Unisee专区</a></li>
+                <li><a href="http://cn.uniview.com/Security/Lab/">宇视安全实验室</a></li>
+            </ul>
+        </div>
+        <div class="fqr">
+            <div class="wsa"> <a href="javascript:void(0);" class="wx">微信</a><a href="http://weibo.com/u/2491989963" class="wb" target="_blank" title="微博">微博</a><a href="http://pub.uniview.com/ys_121218/default.html" class="app" title="APP" target="_blank">APP</a><a href="http://cn.uniview.com/Home/EDM/" class="dzb" target="_blank" title="订阅电子报">订阅电子报</a> </div>
+            <ul class="cf">
+                <li><span class="hywx"></span>官方微信号</li>
+                <li><span class="gfwx"></span>渠道经销微信号</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="网络摄像机—浙江宇视科技有限公司_files/menu_xiala.js.下载" type="text/javascript"></script>
+<div class="copyright">
+    <a href="http://cn.uniview.com/Home/Site_Map/">站点地图</a> | <a href="http://cn.uniview.com/About_Us/Contact_Us/">联系我们</a> | <a href="http://cn.uniview.com/Home/Legal_Privacy/">法律声明</a>  | <a href="http://cn.uniview.com/Home/Privacy_Policy/">隐私政策</a>  | <span>版权所有 2011-2019 浙江宇视科技有限公司。保留一切权利。</span> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802004032" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;" class="beian"><img src="网络摄像机—浙江宇视科技有限公司_files/ga.png" style="float:left;">浙公网安备 33010802004032号</a>
+    <span style="display:none;"><script src="网络摄像机—浙江宇视科技有限公司_files/stat.php" language="JavaScript"></script><script src="网络摄像机—浙江宇视科技有限公司_files/core.php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=4346284" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="网络摄像机—浙江宇视科技有限公司_files/pic.gif"></a></span>
+    <span class="pagetop" onclick="scroll(0,0)" title="返回顶部"></span>
+</div>
+</div>
+
+</body></html>

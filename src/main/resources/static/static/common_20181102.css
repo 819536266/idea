@@ -68,7 +68,7 @@ a:active {color: #2682b6;}
 .menu-service .item{height:200px;}
 .menu-partner .item{height:200px;}
 
-.menu-pro .item ul{ height:165px;}
+.menu-pro .item ul{ height:100px;}
 .menu-solution .item2{float:left; padding:0 40px 0 0; font-size:14px; width:100%; max-width:260px; overflow:hidden;}
 .menu-solution .item2 img{margin-bottom:2px;width:100%; max-width:219px; display:block; border:1px solid #eee;}
 .menu-service .item2 img, .menu-partner .item2 img, .menu-supplier .item2 img, .menu-aboutus .item2 img{margin-bottom:2px; display:block; border:1px solid #eee;}
@@ -129,7 +129,7 @@ a:active {color: #2682b6;}
 #treeNav ul.subNav li a:link, #treeNav ul.subNav li a:visited {width: 100%; padding: 0 0 0 20px; color: #666767; font: 12px/28px "Microsoft YaHei",Verdana,sans-serif;background:#fff; display: block;}
 #treeNav ul.subNav li a:hover {color: #2682b6; font-weight: bold;}
 #treeNav li.firstTitle a:link, #treeNav li.firstTitle a:visited, #treeNav li.firstTitle a:hover {color:#2682b6; font-weight: bold;}
-#treeNav ul.subNav {margin-bottom: 0; display: none;}
+#treeNav ul.subNav {margin-bottom: 0; display: block;}
 #treeNav ul.subNav li.secondTitle a:link, #treeNav ul.subNav li.secondTitle a:visited {color: #2682b6; font-weight: bold;}
 #treeNav ul.subNav li.secondTitle ul li a:link, #treeNav ul.subNav li.secondTitle ul li a:visited {color: #666; font-weight: normal;}
 #treeNav li.treeNavTitle ul.subNav li.secondTitle ul li.threeTitle a:link, #treeNav li.treeNavTitle ul.subNav li.secondTitle ul li.threeTitle a:visited {color: #2682b6; font-weight: normal;}
@@ -1013,7 +1013,7 @@ ul.industryList li a span img{max-width:100%; height:auto;}
 .hometool li a.b3:hover{background-color: #ededed;}
 .hometool li a.b4:hover{background-color: #ededed;}
 
-.homeaboutus{margin:0 11px 50px; padding:30px 0px; max-width:100%; height:420px; background:url(../qmx/lb01.jpg) no-repeat center top;}
+.homeaboutus{margin:0 11px 50px; padding:30px 0px; max-width:100%; height:420px; background:url(../qmx/chair01.jpg) no-repeat center top;}
 .homeaboutus h3{margin-bottom:20px; font-size:42px; color:#fff; text-align:center;}
 .homeaboutus .desc{margin-bottom:20px; color:#fff; font-size:18px; line-height:30px; text-align:center;}
 .homeaboutus a{color:#fff;}

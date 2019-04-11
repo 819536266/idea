@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class IntercepterConfig  {
-    @Autowired
+    /*@Autowired
     private UserIntercepter inter;
     public WebMvcConfigurer config(){
         return new WebMvcConfigurer() {
@@ -17,5 +17,5 @@ public class IntercepterConfig  {
                 registry.addInterceptor(inter).addPathPatterns("/**").excludePathPatterns("/index","/","/login");
             }
         };
-    }
+    }*/
 }

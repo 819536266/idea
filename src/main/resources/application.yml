@@ -1,6 +1,5 @@
 spring:
   freemarker:
-
     allow-request-override: true
 
     cache: true
@@ -12,6 +11,8 @@ spring:
     check-template-location: true
     #配置模板所在的地方
     template-loader-path: classpath:/templates/
+    request-context-attribute: request
+
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     #url需要加时区serverTimezone=UTC
