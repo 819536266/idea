@@ -28,7 +28,7 @@
     </div>
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加专业_职业', '${request.contextPath}/admin/news/add');">
+                onclick="x_admin_show('添加专业_职业', '${request.contextPath}/admin/home/add');">
             <i class="layui-icon"></i>添加专业_职业
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -46,7 +46,7 @@
         var table = layui.table;
         var form = layui.form, element = layui.element
         var path = "${request.contextPath}";
-        var url = path + "/admin/news/list1";
+        var url = path + "/home/list/jieshao02";
         //表格执行渲染
         var adminList = table.render({
             url : url,
@@ -70,34 +70,23 @@
                     align : 'center'
                 }, {
                     field : 'hmTwoName',
-                    title : '名称',
+                    title : '子标签名称',
                     width : 150,
                     align : 'center'
                 }, {
                     field : 'hmOneContent',
                     title : '内容',
                     width : 200,
-                    align : 'center'
-                }, {
-                    field : 'hmOneImage',
-                    title : '封面图',
-                    width : 200,
                     toolbar : '#barDemo1'
-                }, {
-                    field : 'hmOneDate',
-                    title : '创建时间',
-                    width : 150,
-                    align : 'hmId',
-                    sort : true
-                }, {
-                    field : 'hmTwoDate',
-                    title : '数量',
+                },  {
+                    field : 'hmOneImage',
+                    title : '图片',
                     width : 150,
                     align : 'hmId',
                     sort : true
                 }, {
                     field : 'hmUrl',
-                    title : '介绍',
+                    title : '链接地址',
                     width : 150
                 }, {
                     width : 350,
@@ -124,7 +113,7 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/home/update;
+                var p1 = path + '/admin/home/home/update/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {

@@ -2,13 +2,22 @@ package com.qmxmh.demo.web;
 
 import com.qmxmh.demo.pojo.QmxHome;
 import com.qmxmh.demo.service.HomeService;
+import com.qmxmh.demo.util.Ajax;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.net.URLDecoder;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("home")
@@ -23,6 +32,16 @@ public class QmxHomeController {
         return "index";
     }
     /**
+     * 根据类型查询
+     * */
+    @RequestMapping("list/{type}")
+    @ResponseBody
+    public Ajax findByOneType(@PathVariable String type, Model model,Integer page,Integer limit){
+        //根据id查询
+        Ajax home=service.findByOneType(type,page,limit);
+        return home;
+    }
+    /**
      * 根据id查询
      * */
     @RequestMapping("{id}")
@@ -35,5 +54,39 @@ public class QmxHomeController {
         System.out.println(home);
         return "details";
     }
-
+    /**
+     * 根据id查询
+     * */
+    @RequestMapping("updateBefore/{id}")
+    public String update(@PathVariable Long id, Model model){
+        //根据id查询
+        QmxHome home=service.findById(id);
+        List<QmxHome> list = service.getHome();
+        model.addAttribute("homeone",home);
+        return "update";
+    }
+    @RequestMapping("add")
+    public String add(QmxHome qmxHome, MultipartFile upload, Model model, HttpServletRequest request){
+        try{
+            //判断有无文件上传
+            qmxHome.setHmOneDate(new Date());
+            if (!upload.isEmpty()){
+                String filename = upload.getOriginalFilename();
+                String uuidname= UUID.randomUUID().toString().replace("_","")+filename.substring(filename.lastIndexOf(".")-1);
+                String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
+                File is=new File(decode+ "templates/admin/static/qmx/image/");
+                if(!is.exists()){
+                    is.mkdirs();
+                }
+                String filepath=is+"\\"+uuidname;
+                File file =new File(filepath);
+                upload.transferTo(file);
+                qmxHome.setHmOneImage("qmx/image/"+uuidname);
+            }
+            service.save(qmxHome);
+        }catch (Exception e){
+            return "";
+        }
+        return "redirect:/admin/index";
+    }
 }

@@ -16,7 +16,7 @@
     <div class="container">
         <div class="header" id="Header">
             <p class="logo"><a href="http://cn.uniview.com/default.htm"><img src="${request.contextPath}/qmx/logo.png" alt="宇视科技" width="145" height="30"></a></p>
-            <div class="header-opt">
+            <#--<div class="header-opt">
                 <div class="hlink"><span id="login"><a href="http://cn.uniview.com/Home/Login/Default.htm" target="_blank" title="登录">登录</a> ｜ <a href="http://cn.uniview.com/Home/Registration/" target="_blank" title="注册">注册</a></span>
                     <script type="text/javascript" src="${request.contextPath}/static/showUser.js"></script>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ <a href="http://en.uniview.com/" style="cursor:hand" target="_blank" title="English">English</a> ]</div>
@@ -25,7 +25,7 @@
                         <input name="k" id="keyword" type="text" class="word">
                         <a class="btn" href="javascript:void(0)" onclick="searchAction('keyword')">搜索</a> </div>
                 </div>
-            </div>
+            </div>-->
             <div class="phone-nav visible-xs-block visible-sm-block">
                 <div class="search-btn">
                     <div class="search-btn" id="search-toggle"></div>
@@ -43,8 +43,8 @@
                                         <#if (homeone.hmOneType=="home") >
                                          <li><a href="${request.contextPath}/home/${homeone.hmId}" class="menu">${homeone.hmOneName}</a>
                                             <#list home as home1>
-
                                                 <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
+
                                                      <ul>
                                                          <li>
                                                              <a title="${home1.hmTwoName}" href="${request.contextPath}/home/${home1.hmId}">${home1.hmTwoName}

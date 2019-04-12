@@ -34,7 +34,7 @@
 		<ul class="layui-nav right" lay-filter="">
 			<li class="layui-nav-item"><a href="javascript:;">WelCome<#--:${admin.picName}--></a>
 			</li>
-			<li class="layui-nav-item to-index"><a href="">前台首页</a></li>
+			<li class="layui-nav-item to-index"><a href="${request.contextPath}/index">前台首页</a></li>
 		</ul>
 
 	</div>
@@ -47,56 +47,84 @@
 				<li><a href="${request.contextPath}/admin/index.ftl"> <i class=layui-icon>&#xe68e;</i>
 						<cite>首页</cite> <i class="iconfont nav_right">&#xe697;</i>
 				</a></li>
-
-
-				<li><a href="javascript:;"> <i class="layui-icon">&#xe620;</i>
-						<cite>课程管理</cite> <i class="iconfont nav_right">&#xe697;</i>
-				</a>
-					<ul class="sub-menu">
-						<li><a _href="${request.contextPath}/admin/majors/list3.ftl"> <i
-								class="iconfont">&#xe6a7;</i> <cite>职业教育列表</cite>
-						</a>
-							<ul class="sub-menu">
-								<li><a _href="${request.contextPath}/admin/majors1/list.ftl"> <i
-										class="iconfont">&#xe6a7;</i> <cite>专业列表</cite>
-								</a></li>
-								<li><a _href="${request.contextPath}/admin/class/list.ftl?isEb=2"> <i
-										class="iconfont">&#xe6a7;</i> <cite>课程列表</cite>
-								</a></li>
-							</ul></li>
-						<li><a _href="${request.contextPath}/admin/majors/list2.ftl"> <i
-								class="iconfont">&#xe6a7;</i> <cite>学历教育管理</cite>
-						</a>
-							<ul class="sub-menu">
-								<li><a _href="${request.contextPath}/admin/majors/list.ftl"> <i
-										class="iconfont">&#xe6a7;</i> <cite>专业列表</cite>
-								</a></li>
-								<li><a _href="${request.contextPath}/admin/class/list.ftl?isEb=1"> <i
-										class="iconfont">&#xe6a7;</i> <cite>课程列表</cite>
-								</a></li>
-								<li><a _href="${request.contextPath}/admin/majors/list2.ftl"> <i
-										class="iconfont">&#xe6a7;</i> <cite>行业列表</cite>
-								</a></li>
-							</ul></li>
-					</ul></li>
-
-
 						<li><a _href=""> <i class="layui-icon">&#xe620;</i> <cite>首页管理</cite><i class="iconfont nav_right">&#xe697;</i>
 						</a>
 							<ul class="sub-menu">
-								<li><a _href="${request.contextPath}/admin/news/list?detailId=17"> <i
-										class="iconfont">&#xe6a7;</i> <cite>友情链接</cite>
+								<li><a _href="${request.contextPath}/admin/home/home/list" > <i
+										class="iconfont">&#xe6a7;</i> <cite>首页标头</cite>
 								</a></li>
-								<li><a _href="${request.contextPath}/admin/news/list.ftl?detailId=18"> <i
-										class="iconfont">&#xe6a7;</i> <cite>常见问题</cite>
+                                <li><a _href="${request.contextPath}/admin/home/lunbo/list"> <i
+                                        class="iconfont">&#xe6a7;</i> <cite>轮播图片</cite>
+                                </a></li>
+								<li><a _href="${request.contextPath}/admin/home/lunbotiao/list"> <i
+										class="iconfont">&#xe6a7;</i> <cite>轮播文字</cite>
 								</a></li>
-								<li><a _href="${request.contextPath}/admin/news/list.ftl?detailId=19"> <i
-										class="iconfont">&#xe6a7;</i> <cite>特色专业</cite>
-								</a></li>
-								<li><a _href="${request.contextPath}/admin/news/list.ftl?detailId=20"> <i
-										class="iconfont">&#xe6a7;</i> <cite>轮播图片</cite>
-								</a></li>
-
+                                    <li><a _href="${request.contextPath}/admin/home/xinpin/list"> <i
+                                            class="iconfont">&#xe6a7;</i> <cite>小轮播图</cite>
+                                    </a>
+                                        <ul class="sub-menu">
+										<li><a _href="${request.contextPath}/admin/home/xinpin/list"> <i
+												class="iconfont">&#xe6a7;</i> <cite>新品推荐</cite>
+										</a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/fenxiao/list"> <i
+                                                  class="iconfont">&#xe6a7;</i> <cite>分销专区</cite></a>
+										</li>
+										<li><a _href="${request.contextPath}/admin/home/anli/list"> <i
+											class="iconfont">&#xe6a7;</i> <cite>案例</cite>
+										</a></li>
+										<li><a _href="${request.contextPath}/admin/home/zhaopin/list"> <i
+												class="iconfont">&#xe6a7;</i> <cite>招聘信息</cite>
+										</a></li>
+                                        </ul>
+                                    </li>
+                                <li><a _href="${request.contextPath}/admin/home/list.ftl> <i
+                                        class="iconfont">&#xe6a7;</i> <cite>信息</cite>
+                                </a>
+                                    <ul class="sub-menu">
+                                        <li><a _href="${request.contextPath}/admin/home/jieshao01/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>信息1</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/jieshao02/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>信息2</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/jieshao03/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>信息3</cite>
+                                        </a></li>
+                                    </ul>
+								</li>
+                                <li><a _href="${request.contextPath}/admin/home/list> <i
+                                        class="iconfont">&#xe6a7;</i> <cite>荣誉信息</cite>
+                                </a>
+                                    <ul class="sub-menu">
+                                        <li><a _href="${request.contextPath}/admin/home/xinxi/list" > <i
+                                                class="iconfont">&#xe6a7;</i> <cite>荣誉信息</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/shuliang/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>荣誉数量</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/jixiao/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>功绩</cite>
+                                        </a></li>
+                                    </ul>
+                                </li>
+                                <li><a _href="${request.contextPath}/admin/home/floor/list"> <i
+                                        class="iconfont">&#xe6a7;</i> <cite>超链接</cite>
+                                </a> </li>
+                                <li><a _href="${request.contextPath}/admin/home/list"> <i
+                                        class="iconfont">&#xe6a7;</i> <cite>底部链接</cite>
+                                </a>
+                                    <ul class="sub-menu">
+                                        <li><a _href="${request.contextPath}/admin/home/lianxiwomen/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>联系我们</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/falvshengming/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>法律声明</cite>
+                                        </a></li>
+                                        <li><a _href="${request.contextPath}/admin/home/yinsizhengce/list"> <i
+                                                class="iconfont">&#xe6a7;</i> <cite>隐私政策</cite>
+                                        </a></li>
+                                    </ul>
+                                </li>
 							</ul></li>
 
 					</ul></li>
@@ -121,8 +149,7 @@
 			</ul>
 			<div class="layui-tab-content">
 				<div class="layui-tab-item layui-show">
-					<iframe src='${request.contextPath}/admin/welcome.ftl' frameborder="0"
-						scrolling="yes" class="x-iframe"></iframe>
+
 				</div>
 			</div>
 		</div>

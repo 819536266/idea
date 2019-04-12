@@ -45,18 +45,7 @@
 	<div class="x-body">
 		<form class="layui-form" method="post" action="${request.contextPath}/home/add"
 			id="myAddForm" enctype=multipart/form-data>
-			<div class="layui-form-item">
-				<label for="username" class="layui-form-label title"> <span
-					class="x-red">*</span>标题
-				</label>
-				<div class="layui-input-inline">
-					<input type="text" id="username" name="hmOneName" required=""
-						lay-verify="required" autocomplete="off" class="layui-input">
-				</div>
-				<div class="layui-form-mid layui-word-aux">
-					<span class="x-red">*</span>内容标题
-				</div>
-			</div>
+
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label title"> <span
                         class="x-red">*</span>链接
