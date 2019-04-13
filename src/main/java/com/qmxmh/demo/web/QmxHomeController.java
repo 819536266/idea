@@ -32,6 +32,16 @@ public class QmxHomeController {
         return "index";
     }
     /**
+     * 根据id查询子分类
+     * */
+    @RequestMapping("son/{type}")
+    @ResponseBody
+    public Ajax findSon(@PathVariable String type, Model model,Integer page,Integer limit){
+        //根据id查询
+        Ajax home=service.findSon(type,page,limit);
+        return home;
+    }
+    /**
      * 根据类型查询
      * */
     @RequestMapping("list/{type}")
@@ -65,16 +75,56 @@ public class QmxHomeController {
         model.addAttribute("homeone",home);
         return "update";
     }
-    @RequestMapping("add")
-    public String add(QmxHome qmxHome, MultipartFile upload, Model model, HttpServletRequest request){
-        try{
-            //判断有无文件上传
+    //删除
+    @RequestMapping("delete/{id}")
+    @ResponseBody
+    public int delete(@PathVariable Long id){
+        try {
+            service.deleteById(id);
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+    @RequestMapping("update")
+    @ResponseBody
+    public int update(QmxHome qmxHome, MultipartFile upload, Model model, HttpServletRequest request){
+        try {
+            //设置时间
             qmxHome.setHmOneDate(new Date());
-            if (!upload.isEmpty()){
+            //判断有无文件上传
+            if (upload!=null && !upload.isEmpty()){
                 String filename = upload.getOriginalFilename();
                 String uuidname= UUID.randomUUID().toString().replace("_","")+filename.substring(filename.lastIndexOf(".")-1);
                 String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
-                File is=new File(decode+ "templates/admin/static/qmx/image/");
+                File is=new File(decode+ "/static/qmx/image/");
+                if(!is.exists()){
+                    is.mkdirs();
+                }
+                String filepath=is+"\\"+uuidname;
+                File file =new File(filepath);
+                upload.transferTo(file);
+                qmxHome.setHmOneImage("qmx/image/"+uuidname);
+            }
+            service.update(qmxHome);
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
+    @RequestMapping("add")
+    @ResponseBody
+    public int add(QmxHome qmxHome, MultipartFile upload, Model model, HttpServletRequest request){
+        try{
+            //设置时间
+            qmxHome.setHmOneDate(new Date());
+            //判断有无文件上传
+            if (upload!=null && !upload.isEmpty()){
+                String filename = upload.getOriginalFilename();
+                String uuidname= UUID.randomUUID().toString().replace("_","")+filename.substring(filename.lastIndexOf(".")-1);
+                String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
+                File is=new File(decode+ "/static/qmx/image/");
                 if(!is.exists()){
                     is.mkdirs();
                 }
@@ -85,8 +135,10 @@ public class QmxHomeController {
             }
             service.save(qmxHome);
         }catch (Exception e){
-            return "";
+            //返回0则为失败
+            return 0;
         }
-        return "redirect:/admin/index";
+        //返回1则为成功
+        return 1;
     }
 }

@@ -15,22 +15,22 @@ import java.util.List;
 
 @Controller
 public class IndexController {
-    @Autowired
+    @RequestMapping("/admin/{page}")
+    public String adminindex(@PathVariable String page, Model model ){
+        return "admin/"+page;
+    }
+  /*   @Autowired
     private HomeService HomeService;
     @RequestMapping("/{page}")
     public String index(@PathVariable String page, Model model ){
-        System.out.println("3333333");
         List<QmxHome> home = HomeService.getHome();
         System.out.println(home);
         model.addAttribute("home",home);
         return page;
     }
-    @RequestMapping("/admin/{page}")
-    public String adminindex(@PathVariable String page, Model model ){
-        System.out.println("33333333");
-        System.out.println(page);
-        return "admin/"+page;
-    }
+
+
+
     @RequestMapping("/admin/news/{page}")
     public String adminnewsindex(@PathVariable String page, Model model ){
         System.out.println("222");
@@ -48,12 +48,16 @@ public class IndexController {
         ajax.setData(home);
         ajax.setCount(1000);
         return ajax;
-    }
+    }*/
     /**
      * 跳转至查询所有
      * */
     @RequestMapping("/")
-    public String login(Model model){
+    public String index(Model model){
+        return "redirect:/home/index";
+    }
+    @RequestMapping("/index")
+    public String index1(Model model){
         return "redirect:/home/index";
     }
 }

@@ -37,7 +37,7 @@ public class UploadController {
         try {
             // URLDecoder.decode()对获取的路径进行转码
             File path=new File(URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(),"UTF-8"));
-            File uploadpath=new File(path.getAbsolutePath(), "templates/admin/static/qmx/image/");
+            File uploadpath=new File(path.getAbsolutePath(), "/static/qmx/image/");
             System.out.println("文件储存路径:"+path);
             //判断是否有此文件夹
             if(!uploadpath.exists()){

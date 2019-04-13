@@ -28,11 +28,13 @@ public class HomeServiceImpl implements HomeService {
     public QmxHome findById(Long id) {
         return qmxHomeMapper.selectByPrimaryKey(id);
     }
+
     //添加
     @Override
     public void save(QmxHome qmxHome) {
         qmxHomeMapper.insertSelective(qmxHome);
     }
+
     //根据类型分页查询
     @Override
     public Ajax findByOneType(String type, Integer page, Integer limit) {
@@ -46,16 +48,45 @@ public class HomeServiceImpl implements HomeService {
 
         Ajax ajax = new Ajax();
         //判断是否存在数据
-        if(pageInfo.getList().size()>0){
             //设置返回格式
             ajax.setCode(0);
             ajax.setMsg("");
             Long total = pageInfo.getTotal();
             ajax.setCount(total.intValue());
             ajax.setData(pageInfo.getList());
-        }else{
-            ajax.setCode(0);
-        }
+
         return ajax;
+    }
+
+
+    //根据id查询子分类
+    @Override
+    public Ajax findSon(String type, Integer page, Integer limit) {
+        QmxHomeExample qmxHomeExample = new QmxHomeExample();
+        //分页插件
+        PageHelper.startPage(page,limit);
+        //设置条件
+        qmxHomeExample.createCriteria().andHmOneTypeEqualTo(type);
+        List<QmxHome> qmxHomes = qmxHomeMapper.selectByExample(qmxHomeExample);
+        PageInfo<QmxHome> pageInfo=new PageInfo(qmxHomes);
+        Ajax ajax = new Ajax();
+        //设置返回格式
+        ajax.setCode(0);
+        ajax.setMsg("");
+        Long total = pageInfo.getTotal();
+        ajax.setCount(total.intValue());
+        ajax.setData(pageInfo.getList());
+
+        return ajax;
+    }
+   //根据id删除
+    @Override
+    public void deleteById(Long id) {
+        qmxHomeMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void update(QmxHome qmxHome) {
+        qmxHomeMapper.updateByPrimaryKey(qmxHome);
     }
 }

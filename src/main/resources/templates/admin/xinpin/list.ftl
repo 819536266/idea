@@ -27,10 +27,10 @@
         </form>
     </div>
     <xblock>
-        <button class="layui-btn"
-                onclick="x_admin_show('添加专业_职业', '${request.contextPath}/admin/home/add');">
-            <i class="layui-icon"></i>添加专业_职业
-        </button>
+        <#--<button class="layui-btn"
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/xinpin/add');">
+            <i class="layui-icon"></i>添加
+        </button>-->
         <span class="x-right" style="line-height: 40px">共有数据：<span
                 class="totalRow"> </span> 条
 		</span> </xblock>
@@ -69,19 +69,12 @@
                     width : 150,
                     align : 'center'
                 }, {
-                    field : 'hmTwoName',
-                    title : '子标签名称',
-                    width : 150,
-                    align : 'center'
-                },{
-                    field : 'hmOneImage',
-                    title : '图片',
-                    width : 150,
-                    align : 'hmId',
-                    sort : true
-                }, {
                     field : 'hmUrl',
                     title : '链接地址',
+                    width : 150
+                }, {
+                    templet: "<div><button class='layui-btn layui-btn-sm ' lay-event='son'>查看子标签</button></div>",
+                    title : '查看子标签',
                     width : 150
                 }, {
                     width : 350,
@@ -108,21 +101,20 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/home/update/' + data.hmId;
+                var p1 = path + '/admin/home/xinpin/update/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/admin/majors/del?id=" + data.id,
+                    $.get(path + "/home/delete/" + data.id,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
                             });
                 });
-            } else if (layEvent === 'ziyuan') {
-                var p1 = path + '/admin/resource/list.ftl?id=' + data.id;
-                x_admin_show('相关资源', p1, $(window).width(), $(window)
-                        .height());
+            } else if (layEvent === 'son') {
+                var p1 = path + '/admin/home/xinpin/son/' + data.hmId;
+                x_admin_show("子分类", p1);
             }
         });
     });
@@ -133,7 +125,6 @@
 </script>
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-mini" lay-event="view">查看编辑</a>
-  <#--<a class="layui-btn layui-btn-mini" lay-event="ziyuan">相关资源</a>-->
     <a class="layui-btn layui-btn-mini  layui-btn-danger" lay-event="del">删除记录</a>
 </script>
 <script type="text/html" id="titleTpl">

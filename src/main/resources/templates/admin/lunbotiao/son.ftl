@@ -28,7 +28,7 @@
     </div>
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/yinsizhengce/add');">
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/lunbotiao/add');">
             <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -46,7 +46,7 @@
         var table = layui.table;
         var form = layui.form, element = layui.element
         var path = "${request.contextPath}";
-        var url = path + "/home/list/yinsizhengce";
+        var url = path + "/home/son/"+${homeid};
         //表格执行渲染
         var adminList = table.render({
             url : url,
@@ -64,10 +64,15 @@
                     width : 80,
                     sort : true
                 }, {
-                    field : 'hmOneName',
+                    field : 'hmTwoName',
                     title : '名称',
                     width : 150,
                     align : 'center'
+                }, {
+                    field : 'hmOneDate',
+                    title : '创建时间',
+                    width : 150,
+                    sort : true
                 }, {
                     field : 'hmUrl',
                     title : '链接地址',
@@ -97,7 +102,7 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/home/update/' + data.hmId;
+                var p1 = path + '/admin/home/anli/update/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
@@ -106,12 +111,8 @@
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
-                            });
+                    });
                 });
-            } else if (layEvent === 'ziyuan') {
-                var p1 = path + '/admin/resource/list.ftl?id=' + data.id;
-                x_admin_show('相关资源', p1, $(window).width(), $(window)
-                        .height());
             }
         });
     });

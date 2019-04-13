@@ -17,7 +17,7 @@
             class="layui-icon" style="line-height: 30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <div class="layui-row">
+    <#--<div class="layui-row">
         <form class="layui-form layui-col-md12 x-so" method="post">
             <input type="text" name="a.title" placeholder="请输入关键字"
                    autocomplete="off" class="layui-input">
@@ -25,10 +25,10 @@
                 <i class="layui-icon">&#xe615;</i>
             </button>
         </form>
-    </div>
+    </div>-->
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/yinsizhengce/add');">
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/home/add');">
             <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -46,7 +46,7 @@
         var table = layui.table;
         var form = layui.form, element = layui.element
         var path = "${request.contextPath}";
-        var url = path + "/home/list/yinsizhengce";
+        var url = path + "/home/son/"+${homeid};
         //表格执行渲染
         var adminList = table.render({
             url : url,
@@ -64,10 +64,15 @@
                     width : 80,
                     sort : true
                 }, {
-                    field : 'hmOneName',
+                    field : 'hmTwoName',
                     title : '名称',
                     width : 150,
                     align : 'center'
+                }, {
+                    field : 'hmOneDate',
+                    title : '创建时间',
+                    width : 150,
+                    sort : true
                 }, {
                     field : 'hmUrl',
                     title : '链接地址',

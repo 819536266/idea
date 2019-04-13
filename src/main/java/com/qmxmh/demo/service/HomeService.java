@@ -13,6 +13,12 @@ public interface HomeService {
     QmxHome findById(Long id);
     //存入
     void save(QmxHome qmxHome);
-
+//根据type 查询
     Ajax findByOneType(String type, Integer page, Integer limit);
+//根据type查询子分类
+    Ajax findSon(String type, Integer page, Integer limit);
+//根据id删除
+    void deleteById(Long id);
+//修改
+    void update(QmxHome qmxHome);
 }

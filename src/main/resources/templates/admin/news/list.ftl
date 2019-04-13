@@ -28,8 +28,8 @@
     </div>
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加专业_职业', '${request.contextPath}/admin/news/add');">
-            <i class="layui-icon"></i>添加专业_职业
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/news/add');">
+            <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
                 class="totalRow"> </span> 条
@@ -129,7 +129,7 @@
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/admin/majors/del?id=" + data.id,
+                    $.get(path + "/home/delete/" + data.id,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();

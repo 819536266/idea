@@ -40,7 +40,7 @@
                     <ul id="nav-phone">
                                 <#if (home?size>0 && home??)>
                                     <#list home as homeone>
-                                        <#if (homeone.hmOneType=="home") >
+                                        <#if (homeone.hmOneType?? &&homeone.hmOneType=="home") >
                                          <li><a href="${request.contextPath}/home/${homeone.hmId}" class="menu">${homeone.hmOneName}</a>
                                             <#list home as home1>
                                                 <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
@@ -406,7 +406,7 @@
                 <div class="toplevel"><a href="http://cn.uniview.com/" class="menu">首页</a></div>
                      <#if (home?size>0 && home??)>
                          <#list home as homeone>
-                             <#if (homeone.hmOneType=="home") >
+                             <#if (homeone.hmOneType?? &&homeone.hmOneType=="home") >
 
                              <div class="toplevel"><a href="${request.contextPath}/home/${homeone.hmId}" class="menu">${homeone.hmOneName}</a>
                              <#--创建变量赋值-->

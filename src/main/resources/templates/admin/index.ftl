@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>城建学校后台首页</title>
+<title>企明星后台首页</title>
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -22,7 +22,7 @@
 	<!-- 顶部开始 -->
 	<div class="container">
 		<div class="logo">
-			<a href="${request.contextPath}/admin/index.ftl">城建学校后台管理系统</a>
+			<a href="${request.contextPath}/admin/index.ftl">企明星后台管理系统</a>
 		</div>
 		<div class="left_open">
 			<i title="展开左侧栏" class="iconfont">&#xe699;</i>
@@ -110,21 +110,9 @@
                                 <li><a _href="${request.contextPath}/admin/home/floor/list"> <i
                                         class="iconfont">&#xe6a7;</i> <cite>超链接</cite>
                                 </a> </li>
-                                <li><a _href="${request.contextPath}/admin/home/list"> <i
+                                <li><a _href="${request.contextPath}/admin/home/lianjie/list"> <i
                                         class="iconfont">&#xe6a7;</i> <cite>底部链接</cite>
-                                </a>
-                                    <ul class="sub-menu">
-                                        <li><a _href="${request.contextPath}/admin/home/lianxiwomen/list"> <i
-                                                class="iconfont">&#xe6a7;</i> <cite>联系我们</cite>
-                                        </a></li>
-                                        <li><a _href="${request.contextPath}/admin/home/falvshengming/list"> <i
-                                                class="iconfont">&#xe6a7;</i> <cite>法律声明</cite>
-                                        </a></li>
-                                        <li><a _href="${request.contextPath}/admin/home/yinsizhengce/list"> <i
-                                                class="iconfont">&#xe6a7;</i> <cite>隐私政策</cite>
-                                        </a></li>
-                                    </ul>
-                                </li>
+                                </a></li>
 							</ul></li>
 
 					</ul></li>
@@ -159,7 +147,7 @@
 	<!-- 中部结束 -->
 	<!-- 底部开始 -->
 	<div class="footer">
-		<div class="copyright">Copyright ©2017 河南省洛阳市城建学校拥有最终解释权</div>
+		<div class="copyright">Copyright ©2017 河南省洛阳市企明星拥有最终解释权</div>
 	</div>
 
 </body>

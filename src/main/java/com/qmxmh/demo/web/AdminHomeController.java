@@ -19,15 +19,28 @@ public class AdminHomeController {
     public String admin(@PathVariable String list,String hmOneType){
         return "admin/"+list+"/list";
     }
+    //返回upload页面
     @RequestMapping("{update}/update/{id}")
     public String update(@PathVariable String update, String hmOneType, @PathVariable Long id, Model model){
-        System.out.println("111");
         QmxHome home=service.findById(id);
         List<QmxHome> list = service.getHome();
         model.addAttribute("homeone",home);
         System.out.println(home);
         return "admin/"+update+"/update";
     }
+    //返回son页面
+    @RequestMapping("{update}/son/{id}")
+    public String son(@PathVariable String update, String hmOneType, @PathVariable String id, Model model){
+        model.addAttribute("homeid",id);
+        return "admin/"+update+"/son";
+    }
+
+    //返回添加页面
+    @RequestMapping("{update}/add")
+    public String add(@PathVariable String update){
+        return "admin/"+update+"/add";
+    }
+
 
 
 }

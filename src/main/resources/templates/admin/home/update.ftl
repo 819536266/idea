@@ -43,8 +43,14 @@
 			class="layui-icon" style="line-height: 30px">ဂ</i></a>
 	</div>
 	<div class="x-body">
-        <form class="layui-form" method="post" action="${request.contextPath}/home/add"
+        <form class="layui-form" method="post" action="${request.contextPath}/home/update"
 			id="myAddForm" enctype=multipart/form-data>
+			<#if (homeone.hmId?? && homeone.hmId!=0)>
+				<input type="hidden" name="hmId" value="${homeone.hmId}"/>
+			</#if>
+			<#if (homeone.hmOneType?? && homeone.hmOneType!="")>
+				<input type="hidden" name="hmOneType" value="${homeone.hmOneType}"/>
+			</#if>
 			<#if (homeone.hmOneName?? && homeone.hmOneName!="")>
 				<div class="layui-form-item">
 					<label for="username" class="layui-form-label title"> <span
@@ -59,20 +65,7 @@
 					</div>
 				</div>
 			</#if>
-			<#if (homeone.hmTwoName?? && homeone.hmTwoName!="")>
-				<div class="layui-form-item">
-                    <label for="username" class="layui-form-label title"> <span
-                            class="x-red">*</span>标题
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="username" name="hmTwoName" required="" value="${homeone.hmTwoName}"
-                               lay-verify="required" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>内容标题
-                    </div>
-                </div>
-			</#if>
+
 			<#if (homeone.hmUrl?? && homeone.hmUrl!="")>
 				<input type="hidden" name="imageUrl" value="${homeone.hmUrl}"/>
 				<div class="layui-form-item">
@@ -88,58 +81,23 @@
                     </div>
                 </div>
 			</#if>
-			<#--<#if (homeone.hmTwoContent?? && homeone.hmTwoContent!="")>
-				<div class="layui-form-item">
-                    <label for="username" class="layui-form-label title"> <span
-                            class="x-red">*</span>数量
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="username" name="hmTwoContent" required="" value="${homeone.hmTwoContent}"
-                               lay-verify="required" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>数量
-                    </div>
-                </div>
-			</#if>-->
-			<#if (homeone.hmOneImage?? && homeone.hmOneImage!="")>
-				<div class="layui-form-item imgInput">
-                    <label for="username" class="layui-form-label"> <span
-                            class="x-red">*</span>图片
-                    </label>
-                    <div class="layui-input-inline imgName">
-                        <div id="preview"></div>
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>260*190
-                    </div>
-                </div>
-			</#if>
-			<#if (homeone.hmOneContent?? && homeone.hmOneContent!="")>
+
 				<div class="layui-form-item detail">
                     <label for="phone" class="layui-form-label"> 详情： </label>
                     <div class="layui-input-block">
-                        <textarea id="demo" name="hmOneContent" style="display: none;">${homeone.hmOneContent}</textarea>
+                        <textarea id="demo" name="hmOneContent" style="display: none;">
+							<#if (homeone.hmOneContent?? && homeone.hmOneContent!="")>
+							${homeone.hmOneContent}
+							</#if>
+						</textarea>
                     </div>
                 </div>
 				<div class="layui-form-item">
 					<label for="L_repass" class="layui-form-label"> </label>
 					<button class="layui-btn" lay-filter="add" lay-submit="">
-						确认添加</button>
+						确认修改</button>
            		 </div>
-			<#else>
-				<div class="layui-form-item detail">
-					<label for="phone" class="layui-form-label"> 详情： </label>
-					<div class="layui-input-block">
-						<textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label for="L_repass" class="layui-form-label"> </label>
-					<button class="layui-btn" lay-filter="add" lay-submit="">
-						确认添加</button>
-				</div>
-			</#if>
+
 		</form>
 	</div>
 	<script>
@@ -155,8 +113,7 @@
 							$('#myAddForm').append(input);*/
 								/*$('.title').find('label').text('标题：');
 								$('.detail').find('label').text('链接：');*/
-							var input = '<input type="file" name="upload"  onchange="preview(this)" />';
-							$('.imgName').append(input);
+
 							//文本编辑器
 							var index = layedit.build('demo', {
 								height : 480,
@@ -165,11 +122,11 @@
 									type : 'post'
 								}
 							});
-							var url = "${request.contextPath}/home/add";
+							var url = "${request.contextPath}/home/update";
 
 						});
 	</script>
-<#--	<script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function() {
 
 			$("#myAddForm").ajaxForm({
@@ -179,12 +136,12 @@
 						var index = parent.layer.getFrameIndex(window.name);
 						parent.layer.close(index);
 					} else {
-						layer.alert('添加失败');
+						layer.alert('修改失败');
 					}
 				}
 			});
 		});
-	</script>-->
+	</script>
 
 </body>
 

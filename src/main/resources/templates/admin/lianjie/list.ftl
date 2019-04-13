@@ -28,7 +28,7 @@
     </div>
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/yinsizhengce/add');">
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/lianjie/add');">
             <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -46,7 +46,7 @@
         var table = layui.table;
         var form = layui.form, element = layui.element
         var path = "${request.contextPath}";
-        var url = path + "/home/list/yinsizhengce";
+        var url = path + "/home/list/lianjie";
         //表格执行渲染
         var adminList = table.render({
             url : url,
