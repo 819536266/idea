@@ -58,29 +58,29 @@
 				</div>
 			</div>
 
-			<input type="hidden" id="username" name="hmOneType" required="" value="shuliang"/>
+            <div class="layui-form-item imgInput">
+                <label for="username" class="layui-form-label"> <span
+                        class="x-red">*</span>图片
+                </label>
+                <div class="layui-input-inline imgName">
+                    <div id="preview"></div>
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>260*190
+                </div>
+            </div>
+            <input type="hidden" id="username" name="hmOneType" required="" value="shuliang"/>
 
-			<div class="layui-form-item detail">
-				<label for="phone" class="layui-form-label"> 详情： </label>
-				<div class="layui-input-block">
-					<textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
-				</div>
-			</div>
+            <div class="layui-form-item detail">
+                <label for="phone" class="layui-form-label"> 详情： </label>
+                <div class="layui-input-block">
+					<#include "../../ueditoradd.ftl">
 
-			<div class="layui-form-item imgInput">
-				<label for="username" class="layui-form-label"> <span
-					class="x-red">*</span>图片
-				</label>
-				<div class="layui-input-inline imgName">
-					<div id="preview"></div>
-				</div>
-				<div class="layui-form-mid layui-word-aux">
-					<span class="x-red">*</span>260*190
-				</div>
-			</div>
+                </div>
+            </div>
 
 
-			<div class="layui-form-item">
+            <div class="layui-form-item">
 				<label for="L_repass" class="layui-form-label"> </label>
 				<button class="layui-btn" lay-filter="add" lay-submit="">
 					确认添加</button>

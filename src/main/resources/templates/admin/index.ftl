@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>企明星后台首页</title>
+    <link rel="shortcut icon" href="${request.contextPath}/qmx/cropped-TIM截图20180406191209-32x32.jpg">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
@@ -22,7 +23,7 @@
 	<!-- 顶部开始 -->
 	<div class="container">
 		<div class="logo">
-			<a href="${request.contextPath}/admin/index.ftl">企明星后台管理系统</a>
+            <a href="${request.contextPath}/admin/index">企明星后台管理系统</a>
 		</div>
 		<div class="left_open">
 			<i title="展开左侧栏" class="iconfont">&#xe699;</i>
@@ -34,7 +35,7 @@
 		<ul class="layui-nav right" lay-filter="">
 			<li class="layui-nav-item"><a href="javascript:;">WelCome<#--:${admin.picName}--></a>
 			</li>
-			<li class="layui-nav-item to-index"><a href="${request.contextPath}/index">前台首页</a></li>
+            <li class="layui-nav-item to-index"><a href="${request.contextPath}/">前台首页</a></li>
 		</ul>
 
 	</div>
@@ -44,7 +45,7 @@
 	<div class="left-nav">
 		<div id="side-nav">
 			<ul id="nav">
-				<li><a href="${request.contextPath}/admin/index.ftl"> <i class=layui-icon>&#xe68e;</i>
+                <li><a href="${request.contextPath}/admin/index"> <i class=layui-icon>&#xe68e;</i>
 						<cite>首页</cite> <i class="iconfont nav_right">&#xe697;</i>
 				</a></li>
 						<li><a _href=""> <i class="layui-icon">&#xe620;</i> <cite>首页管理</cite><i class="iconfont nav_right">&#xe697;</i>

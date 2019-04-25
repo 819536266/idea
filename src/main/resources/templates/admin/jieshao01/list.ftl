@@ -17,15 +17,15 @@
             class="layui-icon" style="line-height: 30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post">
-            <input type="text" name="a.title" placeholder="请输入关键字"
-                   autocomplete="off" class="layui-input">
-            <button class="layui-btn" lay-submit="sreach" lay-filter="go">
-                <i class="layui-icon">&#xe615;</i>
-            </button>
-        </form>
-    </div>
+<#-- <div class="layui-row">
+     <form class="layui-form layui-col-md12 x-so" method="post">
+         <input type="text" name="a.title" placeholder="请输入关键字"
+                autocomplete="off" class="layui-input">
+         <button class="layui-btn" lay-submit="sreach" lay-filter="go">
+             <i class="layui-icon">&#xe615;</i>
+         </button>
+     </form>
+ </div>-->
     <xblock>
        <#-- <button class="layui-btn"
                 onclick="x_admin_show('添加', '${request.contextPath}/admin/home/jieshao01/add');">
@@ -69,21 +69,15 @@
                     width : 150,
                     align : 'center'
                 }, {
-                    field : 'hmTwoName',
-                    title : '子标签名称',
-                    width : 150,
-                    align : 'center'
-                }, {
                     field : 'hmOneContent',
                     title : '内容',
-                    width : 200,
-                    toolbar : '#barDemo1'
+                    width: 150,
+                    align: 'center'
                 },  {
                     field : 'hmOneImage',
                     title : '图片',
                     width : 150,
-                    align : 'hmId',
-                    sort : true
+                    toolbar: '#barDemo1'
                 }, {
                     field : 'hmUrl',
                     title : '链接地址',
@@ -113,19 +107,19 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/home/update/' + data.hmId;
+                var p1 = path + '/admin/home/jieshao01/update/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/home/delete/" + data.id,
+                    $.get(path + "/home/delete/" + data.hmId,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
                             });
                 });
             } else if (layEvent === 'ziyuan') {
-                var p1 = path + '/admin/resource/list.ftl?id=' + data.id;
+                var p1 = path + '/admin/resource/list.ftl?id=' + data.hmId;
                 x_admin_show('相关资源', p1, $(window).width(), $(window)
                         .height());
             }

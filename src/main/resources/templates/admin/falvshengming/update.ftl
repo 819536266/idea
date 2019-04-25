@@ -125,19 +125,22 @@
 				<div class="layui-form-item">
 					<label for="L_repass" class="layui-form-label"> </label>
 					<button class="layui-btn" lay-filter="add" lay-submit="">
-						确认添加</button>
+                        确认修改
+                    </button>
            		 </div>
 			</#if>
             <div class="layui-form-item detail">
                 <label for="phone" class="layui-form-label"> 详情： </label>
                 <div class="layui-input-block">
-                    <textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
+                    <#include "../../ueditor.ftl">
+
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label"> </label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">
-                    确认添加</button>
+                    确认修改
+                </button>
             </div>
 		</form>
 	</div>

@@ -43,8 +43,14 @@
 			class="layui-icon" style="line-height: 30px">ဂ</i></a>
 	</div>
 	<div class="x-body">
-        <form class="layui-form" method="post" action="${request.contextPath}/home/add"
-			id="myAddForm" enctype=multipart/form-data>
+        <form class="layui-form" method="post" action="${request.contextPath}/home/update"
+              id="myAddForm" enctype=multipart/form-data>
+			<#if (homeone.hmId?? && homeone.hmId!=0)>
+				<input type="hidden" name="hmId" value="${homeone.hmId}"/>
+            </#if>
+			<#if (homeone.hmOneType?? && homeone.hmOneType!="")>
+				<input type="hidden" name="hmOneType" value="${homeone.hmOneType}"/>
+            </#if>
 			<#if (homeone.hmOneName?? && homeone.hmOneName!="")>
 				<div class="layui-form-item">
 					<label for="username" class="layui-form-label title"> <span
@@ -88,56 +94,19 @@
                     </div>
                 </div>
 			</#if>
-			<#--<#if (homeone.hmTwoContent?? && homeone.hmTwoContent!="")>
-				<div class="layui-form-item">
-                    <label for="username" class="layui-form-label title"> <span
-                            class="x-red">*</span>数量
-                    </label>
-                    <div class="layui-input-inline">
-                        <input type="text" id="username" name="hmTwoContent" required="" value="${homeone.hmTwoContent}"
-                               lay-verify="required" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>数量
-                    </div>
-                </div>
-			</#if>-->
-			<#if (homeone.hmOneImage?? && homeone.hmOneImage!="")>
-				<div class="layui-form-item imgInput">
-                    <label for="username" class="layui-form-label"> <span
-                            class="x-red">*</span>图片
-                    </label>
-                    <div class="layui-input-inline imgName">
-                        <div id="preview"></div>
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">
-                        <span class="x-red">*</span>260*190
-                    </div>
-                </div>
-			</#if>
-			<#if (homeone.hmOneContent?? && homeone.hmOneContent!="")>
-				<div class="layui-form-item detail">
-                    <label for="phone" class="layui-form-label"> 详情： </label>
-                    <div class="layui-input-block">
-                        <textarea id="demo" name="hmOneContent" style="display: none;">${homeone.hmOneContent}</textarea>
-                    </div>
-                </div>
-				<div class="layui-form-item">
-					<label for="L_repass" class="layui-form-label"> </label>
-					<button class="layui-btn" lay-filter="add" lay-submit="">
-						确认添加</button>
-           		 </div>
-			</#if>
+
             <div class="layui-form-item detail">
                 <label for="phone" class="layui-form-label"> 详情： </label>
                 <div class="layui-input-block">
-                    <textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
+
+                    <#include "../../ueditor.ftl">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label"> </label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">
-                    确认添加</button>
+                    确认修改
+                </button>
             </div>
 		</form>
 	</div>
@@ -168,7 +137,7 @@
 
 						});
 	</script>
-<#--	<script type="text/javascript">
+    <script type="text/javascript">
 		$(document).ready(function() {
 
 			$("#myAddForm").ajaxForm({
@@ -183,7 +152,7 @@
 				}
 			});
 		});
-	</script>-->
+    </script>
 
 </body>
 

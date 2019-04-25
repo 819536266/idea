@@ -14,9 +14,9 @@ a:active {color: #2682b6;}
 /*		↓↓header↓↓			*/
 /*.wrapper, .search,*/
 .homeContent .itempage, .flowBox li .code,
-.fqr .wsa,.fqr li span, .flowBox, .pagetop{background:url(../common/sprites.gif) no-repeat;}
+.fqr .wsa,.fqr li span, .flowBox, .pagetop{background:url(../qmx/sprites.gif) no-repeat;}
 .wrapper{width:100%; position:relative; z-index:7000;background:#eee; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);}
-.wrapper .container{margin:0 auto; width:100%; padding:0px 30px;}
+.wrapper .container{margin:0 auto; width:100%/*; padding:0px 30px*/;border-bottom: 1px #0C0C0C;}
 .header{padding:0px; width:100%; height:78px; overflow:hidden;}
 .logo{float:left; margin-top:26px; width:145px; height:30px; vertical-align:middle;}
 
@@ -918,7 +918,7 @@ ul.industryList li a span img{max-width:100%; height:auto;}
 .error404 img{margin-bottom:10px; max-width:100%; height:auto;}
 .error404 span, .error404 a{color:#d63b37;}
 
-.newproduct span{background:url(../common/sprites.gif) no-repeat;}
+.newproduct span{background:url(../qmx/sprites.gif) no-repeat;}
 .homeContent p{display:none;}
 .homeContent li a, .homeContent li a:hover{color:#fff;}
 .homeContent .title, .homefour .title{color: #333;font-family: "Microsoft Yahei";font-size: 20px;font-weight: normal;height: 20px;line-height: 20px;margin-bottom: 15px;padding-left: 10px;}
@@ -1013,10 +1013,18 @@ ul.industryList li a span img{max-width:100%; height:auto;}
 .hometool li a.b3:hover{background-color: #ededed;}
 .hometool li a.b4:hover{background-color: #ededed;}
 
-.homeaboutus{margin:0 11px 50px; padding:30px 0px; max-width:100%; height:420px; background:url(../qmx/chair01.jpg) no-repeat center top;}
+.homeaboutus{margin:0 11px 50px; padding:30px 0px; max-width:100%; height:420px; background:url(../qmx/chair02.jpg) no-repeat center top;}
 .homeaboutus h3{margin-bottom:20px; font-size:42px; color:#fff; text-align:center;}
 .homeaboutus .desc{margin-bottom:20px; color:#fff; font-size:18px; line-height:30px; text-align:center;}
 .homeaboutus a{color:#fff;}
+.homeaboutusto{ padding:30px 0px; max-width:100%; height:180px; background:url(../qmx/chair03.jpg) no-repeat center top;}
+.homeaboutusto h3{margin-bottom:20px; font-size:42px; color:#fff; text-align:center;}
+.homeaboutusto .desc{margin-bottom:20px; color:#fff; font-size:18px; line-height:30px; text-align:center;}
+.homeaboutusto a{color:#fff;}
+.homeaboutuseo{ padding:30px 0px; max-width:100%; height:300px; background:url(../qmx/chair04.jpg) no-repeat center top;}
+.homeaboutuseo h3{margin-bottom:20px; font-size:42px; color:#fff; text-align:center;}
+.homeaboutuseo .desc{margin-bottom:20px; color:#fff; font-size:18px; line-height:30px; text-align:center;}
+.homeaboutuseo a{color:#fff;}
 ul.rank{margin:0 auto 20px; width:630px;}
 ul.rank li{float:left; margin:0 45px; width:120px; height:80px; display:inline;}
 ul.rank li img{max-width:100%; height:auto;}
@@ -1080,7 +1088,7 @@ dl.campus-faq dd{margin-bottom:30px; color:#333; padding-left:24px; text-indent:
 .flink .linkItemBox{float:left; width:70%;}
 .flink .linkItemBox ul{float:left; width:20%; display:inline;}
 
-.fqr{float:right;width:270px; height:150px;}
+.fqr{float:right;width:270px; height:200px;}
 .fqr .wsa{margin-bottom:5px; width:151px; height:35px; background-position:-55px -177px; position:relative;}
 .fqr .wsa a{position:absolute; top:0px; width:27px; height:27px; display:block; text-indent:-9999px; outline:none;}
 .fqr .wsa a.wx{left:0px;}

@@ -14,7 +14,7 @@
 	function add() {
 		var Request = GetRequest();
 		var isEb = Request["isEb"];
-		var path = '${pp}/admin/class/add.ftl?isEb=' + isEb;
+        var path = '${pp}/admin/class/add.html?isEb=' + isEb;
 		x_admin_show('添加课程', path);
 	}
 </script>

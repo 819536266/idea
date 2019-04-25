@@ -123,7 +123,7 @@
                             });
                 });
             } else if (layEvent === 'son') {
-                var p1 = path + '/admin/home/home/son/' + data.hmId;
+                var p1 = path + '/admin/home/home/son/' + data.hmId + "?homename=" + data.hmOneName;
                 x_admin_show("子分类", p1);
             }
         });

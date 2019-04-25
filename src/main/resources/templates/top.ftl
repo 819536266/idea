@@ -9,7 +9,6 @@
     <meta http-equiv="Content-Language" content="zh-cn">
     <meta http-equiv="imagetoolbar" content="no">
     <meta name="MSSmartTagsPreventParsing" content="true">
-    <meta name="keywords" content="网络摄像机、NVR、智能交通、监控网络，监控存储，监控平台、视频编解码器，全球公共安全和智能交通的解决方案提供商">
     <meta name="description" content="宇视科技（uniview）为全球公共安全和智能交通的解决方案提供商，以可视、智慧、物联产品技术为核心的引领者。在幕后守护公众，提升社会生产协作效率，将中国的领先技术普及到世界，构建和平的价值。">
     <link rel="shortcut icon" href="http://cn.uniview.com/tres/images/favicon.ico">
     <link rel="stylesheet" href="%E5%85%A8%E7%90%83%E5%85%AC%E5%85%B1%E5%AE%89%E5%85%A8%E5%92%8C%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%8F%90%E4%BE%9B%E5%95%86%E2%80%94%E6%B5%99%E6%B1%9F%E5%AE%87%E8%A7%86%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8_files/bootstrap.css" type="text/css">

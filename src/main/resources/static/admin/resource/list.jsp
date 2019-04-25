@@ -14,7 +14,7 @@
 	function add() {
 		var Request = GetRequest();
 		var majorsId = Request["id"];
-		var path = '${pp}/admin/resource/add.ftl?majorsId=' + majorsId;
+        var path = '${pp}/admin/resource/add.html?majorsId=' + majorsId;
 		x_admin_show('添加资源', path);
 	}
 </script>

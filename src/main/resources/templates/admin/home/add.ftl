@@ -8,7 +8,15 @@
 <meta name="viewport"
 	content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
 <#include "../staticFile.ftl">
-<style type="text/css">
+    <title>完整demo</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8"
+            src="${request.contextPath}/static/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+    <style type="text/css">
+
 #preview, .img, img {
 	width: 260px;
 	height: 190px;
@@ -19,6 +27,9 @@
 }
 </style>
 <script type="text/javascript">
+    $(function () {
+        alert(123);
+    });
 	function preview(file) {
 		var prevDiv = document.getElementById('preview');
 		if (file.files && file.files[0]) {
@@ -36,6 +47,7 @@
 </script>
 </head>
 <body>
+
 	<div class="x-nav">
 		<a class="layui-btn layui-btn-small"
 			style="line-height: 1.6em; margin-top: 3px; float: right"
@@ -73,11 +85,12 @@
                 </div>
             </div>
 			<div class="layui-form-item detail">
-				<label for="phone" class="layui-form-label"> 详情： </label>
-				<div class="layui-input-block">
-					<textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
-				</div>
-			</div>
+    <label for="phone" class="layui-form-label"> 详情： </label>
+<div class="layui-input-block">
+
+    <#include "../../ueditoradd.ftl">
+    </div>
+    </div>
 			<div class="layui-form-item">
 				<label for="L_repass" class="layui-form-label"> </label>
 				<button class="layui-btn" lay-filter="add" lay-submit="">

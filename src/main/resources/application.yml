@@ -1,4 +1,8 @@
 spring:
+  #http  配置访问本地资源路径
+  mvc:
+    static-path-pattern: /**
+  profiles:
   freemarker:
     allow-request-override: true
     cache: true
@@ -14,8 +18,8 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    #url需要加时区serverTimezone=UTC
-    url: jdbc:mysql://localhost:3306/qmxmh?serverTimezone=UTC
+    #url需要加时区serverTimezone=UTC 47.92.175.80
+    url: jdbc:mysql://localhost:3306/qmxmh?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: root
     password: root
     #配置连接池
@@ -23,9 +27,11 @@ spring:
     #页面热部署
   thymeleaf:
     cache: true
+    #配置静态资源路径
+  resources:
+    static-locations: classpath:/static/,file:D:/images/qmx/image,file:C:/images/qmx/image
 
-
-    #类热部署
+  #类热部署
   devtools:
     restart:
       enabled: true
@@ -47,6 +53,7 @@ spring:
       max-request-size: 10MB
       #单个文件大小
       max-file-size: 5MB
+
 #日志
 logging:
 #  config: classpath:log4j2.yml
@@ -57,6 +64,7 @@ server:
   port: 80
   error:
     path: /error
+
 
 mybatis:
   #扫描的实体类

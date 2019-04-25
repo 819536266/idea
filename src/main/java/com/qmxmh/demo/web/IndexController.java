@@ -19,36 +19,7 @@ public class IndexController {
     public String adminindex(@PathVariable String page, Model model ){
         return "admin/"+page;
     }
-  /*   @Autowired
-    private HomeService HomeService;
-    @RequestMapping("/{page}")
-    public String index(@PathVariable String page, Model model ){
-        List<QmxHome> home = HomeService.getHome();
-        System.out.println(home);
-        model.addAttribute("home",home);
-        return page;
-    }
 
-
-
-    @RequestMapping("/admin/news/{page}")
-    public String adminnewsindex(@PathVariable String page, Model model ){
-        System.out.println("222");
-        System.out.println(page);
-        return "admin/news/"+page;
-    }
-    @RequestMapping("/admin/news/list1")
-    @ResponseBody
-    public Ajax list(Model model ){
-        System.out.println("111");
-        Ajax ajax = new Ajax();
-        List<QmxHome> home = HomeService.getHome();
-        ajax.setCode(0);
-        ajax.setMsg("");
-        ajax.setData(home);
-        ajax.setCount(1000);
-        return ajax;
-    }*/
     /**
      * 跳转至查询所有
      * */

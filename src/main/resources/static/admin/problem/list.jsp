@@ -14,7 +14,7 @@
 	function add() {
 		var Request = GetRequest();
 		var resourceId = Request["id"];
-		var path = '${pp}/admin/problem/add.ftl?resourceId=' + resourceId;
+        var path = '${pp}/admin/problem/add.html?resourceId=' + resourceId;
 		x_admin_show('添加测试题', path);
 	}
 	function add1() {

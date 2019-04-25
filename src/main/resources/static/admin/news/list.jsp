@@ -14,7 +14,7 @@
 	function uu() {
 		var Request = GetRequest();
 		var key = Request["detailId"];
-		var opath = '${pp}/admin/news/add.ftl?detailId=' + key;
+        var opath = '${pp}/admin/news/add.html?detailId=' + key;
 
 		if (key == 3 || key == 4 || key == 20) {//添加图片
 			opath = '${pp}/admin/news/addImg.ftl?detailId=' + key;

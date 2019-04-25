@@ -84,7 +84,8 @@
 			<div class="layui-form-item detail">
 				<label for="phone" class="layui-form-label"> 详情： </label>
 				<div class="layui-input-block">
-					<textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
+					<#include "../../ueditoradd.ftl">
+
 				</div>
 			</div>
 			<div class="layui-form-item">

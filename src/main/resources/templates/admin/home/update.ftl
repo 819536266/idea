@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport"
 	content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+
 <#include "../staticFile.ftl">
 <style type="text/css">
 #preview, .img, img {
@@ -85,12 +86,15 @@
 				<div class="layui-form-item detail">
                     <label for="phone" class="layui-form-label"> 详情： </label>
                     <div class="layui-input-block">
-                        <textarea id="demo" name="hmOneContent" style="display: none;">
-							<#if (homeone.hmOneContent?? && homeone.hmOneContent!="")>
-							${homeone.hmOneContent}
-							</#if>
-						</textarea>
-                    </div>
+
+						<#include "../../ueditor.ftl">
+                        <#--<div class="layui-input-block">
+                            <textarea id="demo" name="hmOneContent" style="display: none;">
+                                <#if (homeone.hmOneContent?? && homeone.hmOneContent!="")>
+                                ${homeone.hmOneContent}
+                                </#if>
+                            </textarea>
+                        </div>-->
                 </div>
 				<div class="layui-form-item">
 					<label for="L_repass" class="layui-form-label"> </label>
@@ -114,15 +118,15 @@
 								/*$('.title').find('label').text('标题：');
 								$('.detail').find('label').text('链接：');*/
 
-							//文本编辑器
-							var index = layedit.build('demo', {
-								height : 480,
-								uploadImage : {
-									url : '${request.contextPath}/upload/img',
+                            /*//文本编辑器
+                            var index = layedit.build('demo', {
+                                height : 480,
+                                uploadImage : {
+                                    url : '${request.contextPath}/upload/img',
 									type : 'post'
 								}
-							});
-							var url = "${request.contextPath}/home/update";
+							});*/
+                            /*var url = "${request.contextPath}/home/update";*/
 
 						});
 	</script>
@@ -141,8 +145,13 @@
 				}
 			});
 		});
+        /*$("#myAddForm").submit(function () {
+            $("#demo").html(arr.push(UE.getEditor('editor').getContent()););
+           return true;
+        });*/
 	</script>
 
 </body>
+
 
 </html>

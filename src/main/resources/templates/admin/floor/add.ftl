@@ -47,20 +47,24 @@
 			id="myAddForm" enctype=multipart/form-data>
 			<div class="layui-form-item">
 				<label for="username" class="layui-form-label title"> <span
-							class="x-red">*</span>标题
+                        class="x-red">*</span>标题
 				</label>
 				<div class="layui-input-inline">
 					<input type="text" id="username" name="hmOneName" required=""
-						   lay-verify="required" autocomplete="off" class="layui-input">
+                           lay-verify="required" autocomplete="off" class="layui-input">
 				</div>
 				<div class="layui-form-mid layui-word-aux">
 					<span class="x-red">*</span>内容标题
 				</div>
 			</div>
+			<div class="layui-form-item detail">
+				<label for="phone" class="layui-form-label"> 详情： </label>
+				<div class="layui-input-block">
 
-			<input type="hidden" id="username" name="hmOneType" required="" value="floor"/>
-
-
+					<#include "../../ueditoradd.ftl">
+				</div>
+			</div>
+            <input type="hidden" id="username" name="hmOneType" required="" value="floor"/>
 			<div class="layui-form-item">
 				<label for="L_repass" class="layui-form-label"> </label>
 				<button class="layui-btn" lay-filter="add" lay-submit="">

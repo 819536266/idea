@@ -57,6 +57,7 @@
 					<span class="x-red">*</span>内容标题
 				</div>
 			</div>
+            <input type="hidden" name="hmOneType" value="lianjie"/>
             <div class="layui-form-item">
                 <label for="username" class="layui-form-label title"> <span
                         class="x-red">*</span>链接
@@ -84,7 +85,8 @@
 			<div class="layui-form-item detail">
 				<label for="phone" class="layui-form-label"> 详情： </label>
 				<div class="layui-input-block">
-					<textarea id="demo" name="hmOneContent" style="display: none;"></textarea>
+					<#include "../../ueditoradd.ftl">
+
 				</div>
 			</div>
 			<div class="layui-form-item">

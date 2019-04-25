@@ -17,15 +17,15 @@
             class="layui-icon" style="line-height: 30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post">
-            <input type="text" name="a.title" placeholder="请输入关键字"
-                   autocomplete="off" class="layui-input">
-            <button class="layui-btn" lay-submit="sreach" lay-filter="go">
-                <i class="layui-icon">&#xe615;</i>
-            </button>
-        </form>
-    </div>
+<#-- <div class="layui-row">
+     <form class="layui-form layui-col-md12 x-so" method="post">
+         <input type="text" name="a.title" placeholder="请输入关键字"
+                autocomplete="off" class="layui-input">
+         <button class="layui-btn" lay-submit="sreach" lay-filter="go">
+             <i class="layui-icon">&#xe615;</i>
+         </button>
+     </form>
+ </div>-->
     <xblock>
         <#--<button class="layui-btn"
                 onclick="x_admin_show('添加', '${request.contextPath}/admin/home/lunbotiao/add');">
@@ -69,10 +69,9 @@
                     width : 150,
                     align : 'center'
                 }, {
-                    field : 'hmTwoDate',
+                    field: 'hmOneDate',
                     title : '创建时间',
                     width : 150,
-                    align : 'hmId',
                     sort : true
                 }, {
                     field : 'hmUrl',
@@ -112,14 +111,14 @@
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/home/delete/" + data.id,
+                    $.get(path + "/home/delete/" + data.hmId,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
                             });
                 });
             } else if (layEvent === 'son') {
-                var p1 = path + '/admin/home/lunbotiao/son/' + data.hmId;
+                var p1 = path + '/admin/home/lunbotiao/son/' + data.hmId + "?homename=" + data.hmOneName;
                 x_admin_show("子分类", p1);
             }
         });
@@ -131,7 +130,6 @@
 </script>
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-mini" lay-event="view">查看编辑</a>
-  <#--<a class="layui-btn layui-btn-mini" lay-event="ziyuan">相关资源</a>-->
     <a class="layui-btn layui-btn-mini  layui-btn-danger" lay-event="del">删除记录</a>
 </script>
 <script type="text/html" id="titleTpl">

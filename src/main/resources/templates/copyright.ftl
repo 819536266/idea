@@ -22,18 +22,11 @@
 </head>
 <body>
     <div class="copyright">
-
 <#-- 底部-->
             <#if (home?size>0&&home??)>
                 <#list  home as end>
-                    <#if end.hmOneType=="lianxiwomen">
-                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
-                    </#if>
-                    <#if end.hmOneType=="falvshengming">
-                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
-                    </#if>
-                    <#if end.hmOneType=="yinsizhengce">
-                        <a href="${end.hmUrl}">${end.hmOneName}</a> |
+                    <#if end.hmOneType=="lianjie">
+                        <a href="${request.contextPath}/home/content/${end.hmId}">${end.hmOneName}</a>
                     </#if>
                 </#list>
             </#if>

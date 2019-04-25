@@ -4,14 +4,12 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>网络摄像机—浙江宇视科技有限公司</title>
+    <title>河南企明星科技有限公司</title>
     <!--meta http-equiv="Cache-Control" content="max-age=604800,public" /-->
     <meta http-equiv="Content-Language" content="zh-cn">
     <meta http-equiv="imagetoolbar" content="no">
     <meta name="MSSmartTagsPreventParsing" content="true">
-    <meta name="keywords" content="网络摄像机,高清摄像机,宇视科技摄像机,uniview摄像机,宇视摄像机,网络摄像机,IPC,高清IPC,球机,半球,枪机,红外一体机">
-    <meta name="description" content="了解与宇视科技（Uniview）摄像机相关的信息，包括摄像机产品的技术特点、选型指南、应用指南、订购信息、产品特点、产品规格、产品尺寸、典型应用以及相关下载等。">
-    <link rel="shortcut icon" href="http://cn.uniview.com/tres/images/favicon.ico">
+    <link rel="shortcut icon" href="${request.contextPath}/qmx/cropped-TIM截图20180406191209-32x32.jpg">
     <link rel="stylesheet" href="${request.contextPath}/static/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="${request.contextPath}/static/bootstrap-theme.css" type="text/css">
     <link rel="stylesheet" href="${request.contextPath}/static/common_20181102.css" type="text/css">
@@ -22,6 +20,8 @@
     <script src="${request.contextPath}/static/common.js" type="text/javascript"></script>
     <script src="${request.contextPath}/static/menu.js" type="text/javascript"></script>
     <script src="${request.contextPath}/static/base.js" type="text/javascript"></script>
+
+
     <#--<script language="javascript">
         var firstSelectedCss = "firstTitle";
         var secondSelectedCss = "secondTitle";
@@ -82,7 +82,23 @@
         });
     </script>
     <div class="container">
-        <div class="crumbs">
+        <div class="homeaboutusto">
+            <#if (home?size>0&&home??)>
+                <#list  home as xinxi>
+                    <#if xinxi.hmOneType=="xinxi">
+                        <h3><font color="black" face="楷体"><#if homeById??>
+                            <a class="blue3" href="${request.contextPath}/home/${homeById.hmId}">
+                                ${homeById.hmOneName}
+                            </a>
+                        </#if></font></h3>
+                    </#if>
+                </#list>
+            <#else>
+            </#if>
+        </div>
+
+        <div class="crumbs" >
+
             <h1 class="breadTitle">
                 <#if homeById??>
                     <#if homeById.hmOneType=="home">
@@ -93,34 +109,43 @@
 
                 </#if>
             </h1>
-            <ol class="breadcrumb">
-                <a class="blue3" href="http://cn.uniview.com/">首页</a>
-                <img src="${request.contextPath}/网络摄像机—浙江宇视科技有限公司_files/arrow.gif" border="0">
-            <#if homeById??>
-                <a class="blue3" href="${request.contextPath}/home/${homeById.hmId}">
-                    ${homeById.hmOneName}
-                </a>
-            </#if>
-                <img src="${request.contextPath}/网络摄像机—浙江宇视科技有限公司_files/arrow.gif" border="0">
-            </ol>
+
+                <ol class="breadcrumb">
+                    <a class="blue3" href="${request.contextPath}/">首页</a>
+                    <img src="${request.contextPath}/河南企明星科技有限公司_files/arrow.gif" border="0">
+                <#if homeById??>
+                    <a class="blue3" href="${request.contextPath}/home/${homeById.hmId}">
+                        ${homeById.hmOneName}
+                    </a>
+                </#if>
+                    <img src="${request.contextPath}/河南企明星科技有限公司_files/arrow.gif" border="0">
+
+                </ol>
+            <p style="height:0px;border:none;border-top:1px solid #555555;" />
         </div>
     </div>
-    <div class="mbl_banner visible-xs"><img border="0" src="${request.contextPath}/网络摄像机—浙江宇视科技有限公司_files/20170502_1618120_2_759425_140445_0.jpg"></div>
+   <#-- <div class="mbl_banner visible-xs"><img border="0" src="${request.contextPath}/qmx/chair03.jpg"></div>-->
     <div class="container middlebody">
         <div class="row">
             <div class="col-xs-12 col-sm-9 col-md-9 col-right">
                 <div class="mainContent">
-                    <div  id="detailContent">
+                    <div id="detailContent">
                         <#--内容-->
-                        ${homeById.hmOneContent!""}
+                         <#if homeById.hmOneContent?? && homeById.hmOneContent=="">
+                        <div style="width:200px;margin: auto">
+                            <font color="black" face="加粗" size="4"> 页面正在建设中......</font>
+                        </div>
+                         <#else>
+                             ${homeById.hmOneContent!}
+                         </#if>
                     </div>
                     <#--<div id="detailContent">
-                        <div class="photo hidden-xs"><a href="http://cn.uniview.com/Topics/IPC/" target="_blank"><img src="网络摄像机—浙江宇视科技有限公司_files/ipc.jpg" alt="超感IPC系列——全新方式诠释“视，适，智，质”"></a></div>
-                        <div class="photo hidden-xs"><img border="0" src="网络摄像机—浙江宇视科技有限公司_files/20170502_1618121_1_732542_140445_0.jpg"></div>
+                        <div class="photo hidden-xs"><a href="http://cn.uniview.com/Topics/IPC/" target="_blank"><img src="河南企明星科技有限公司_files/ipc.jpg" alt="超感IPC系列——全新方式诠释“视，适，智，质”"></a></div>
+                        <div class="photo hidden-xs"><img border="0" src="河南企明星科技有限公司_files/20170502_1618121_1_732542_140445_0.jpg"></div>
                         <h2 class="sortTitle">产品类型</h2>
                         <div class="product_list">
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Box/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_box.jpg" alt="枪式网络摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Box/"><img src="河南企明星科技有限公司_files/ph_box.jpg" alt="枪式网络摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Box/">枪式网络摄像机</a></h3>
                                     <ul class="clearfix">
@@ -132,7 +157,7 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Bullet/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_bullet.jpg" alt="筒型网络摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Bullet/"><img src="河南企明星科技有限公司_files/ph_bullet.jpg" alt="筒型网络摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Bullet/">筒型网络摄像机</a></h3>
                                     <ul class="clearfix">
@@ -144,7 +169,7 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_fixed_dome.jpg" alt="半球网络摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/"><img src="河南企明星科技有限公司_files/ph_fixed_dome.jpg" alt="半球网络摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Fixed_Dome/">半球网络摄像机</a></h3>
                                     <ul class="clearfix">
@@ -157,7 +182,7 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Dome/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_dome.jpg" alt="球型网络摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Dome/"><img src="河南企明星科技有限公司_files/ph_dome.jpg" alt="球型网络摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Dome/">球型网络摄像机</a></h3>
                                     <ul class="clearfix">
@@ -169,7 +194,7 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_ptz.jpg" alt="云台&amp;一体机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/"><img src="河南企明星科技有限公司_files/ph_ptz.jpg" alt="云台&amp;一体机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/PTZ_Camera/Small/">云台&amp;一体机</a></h3>
                                     <ul class="clearfix">
@@ -181,13 +206,13 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Linkage/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_linkage.jpg" alt="多目联动网络摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Linkage/"><img src="河南企明星科技有限公司_files/ph_linkage.jpg" alt="多目联动网络摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Linkage/">多目联动网络摄像机</a></h3>
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Integration/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_integration.jpg" alt="机芯"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Integration/"><img src="河南企明星科技有限公司_files/ph_integration.jpg" alt="机芯"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Integration/">机芯</a></h3>
                                     <ul class="clearfix">
@@ -197,7 +222,7 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Peripheral/"><img src="网络摄像机—浙江宇视科技有限公司_files/ph_peripheral.jpg" alt="摄像机外设"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Peripheral/"><img src="河南企明星科技有限公司_files/ph_peripheral.jpg" alt="摄像机外设"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Peripheral/">摄像机外设</a></h3>
                                     <ul class="clearfix">
@@ -215,13 +240,13 @@
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/"><img src="网络摄像机—浙江宇视科技有限公司_files/explosion-proof.jpg" alt="防爆摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/"><img src="河南企明星科技有限公司_files/explosion-proof.jpg" alt="防爆摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Explosion-proof/">防爆摄像机</a></h3>
                                 </div>
                             </div>
                             <div class="item clearfix">
-                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/"><img src="网络摄像机—浙江宇视科技有限公司_files/thermal.jpg" alt="热成像摄像机"></a></div>
+                                <div class="img"><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/"><img src="河南企明星科技有限公司_files/thermal.jpg" alt="热成像摄像机"></a></div>
                                 <div class="sort">
                                     <h3><a href="http://cn.uniview.com/Products/Cameras/Thermal_imaging/">热成像摄像机</a></h3>
                                 </div>
@@ -230,9 +255,10 @@
                     </div>-->
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div id="sideBar">
-                    <ul id="treeNav">
+                    <ul id="treeNav" >
                       <#--  列表-->
                         <#if (home?size>0 && home??)>
                             <#if homeById??>
@@ -242,9 +268,11 @@
                            <#-- 如果点击的主标签-->
 
                                 <#if (homeById??) && homeById.hmOneType=='home'>
-                                    <#if (homeone.hmOneType=="home")>
-
-                                        <li id="${homeone.hmId}" class="${((homeone.hmId==homeById.hmId))?string('treeNavTitle firstTitle','treeNavTitle')}"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
+                                    <#if (homeone.hmOneName??&&homeone.hmOneName=="商城")>
+                                        <li id="${homeone.hmId}" class="treeNavTitle"><a href="${homeone.hmUrl}"
+                                                                                         title=""><strong>${homeone.hmOneName}</strong></a>
+                                    <#elseif (homeone.hmOneType=="home")>
+                                        <li onmousemove="fun1(this)" onmouseout="out(this)" id="${homeone.hmId}" class="${((homeone.hmId==homeById.hmId))?string('treeNavTitle firstTitle','treeNavTitle')}"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
                                             <ul class="subNav" style="display: ${(homeone.hmId==homeById.hmId)?string('block','none')}";">
                                                 <#list home as home1>
                                                     <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
@@ -259,8 +287,11 @@
                                     </#if>
                                 <#-- 如果点击的子标签-->
                                 <#elseif (homeById??&&homeById.hmOneType!="home")>
-                                    <#if (homeone.hmOneType=="home")>
-                                        <li id="${homeone.hmId}" class="${((homeone.hmId)?string==homeById.hmOneType)?string('treeNavTitle firstTitle','treeNavTitle')}"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
+                                    <#if (homeone.hmOneName??&&homeone.hmOneName=="商城")>
+                                        <li id="${homeone.hmId}" class="treeNavTitle"><a href="${homeone.hmUrl}"
+                                                                                         title=""><strong>${homeone.hmOneName}</strong></a>
+                                    <#elseif (homeone.hmOneType=="home")>
+                                        <li onmousemove="fun1(this)"  onmouseout="out(this)" id="${homeone.hmId}" class="${((homeone.hmId)?string==homeById.hmOneType)?string('treeNavTitle firstTitle','treeNavTitle')}"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
                                             <ul class="subNav" style="display: ${((homeone.hmId)?string==homeById.hmOneType?string)?string('block','none')};">
                                                 <#list home as home1>
                                                     <#if (home1.hmTwoName?? && home1.hmOneType==(homeone.hmId)?string)>
@@ -275,9 +306,10 @@
                                         </li>
                                     </#if>
                                     <#--没有-->
+
                                 <#else>
                                     <#if (homeone.hmOneType=="home")>
-                                        <li id="${homeone.hmId}" class="treeNavTitle"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
+                                        <li id="${homeone.hmId}" onmousemove="fun1(this)"  onmouseout="out(this)" class="treeNavTitle"><a href="${request.contextPath}/home/${homeone.hmId}" title=""><strong>${homeone.hmOneName}</strong></a>
                                             <ul class="subNav" style="display: none;">
                                                 <#list home as home1>
                                                     <#if (home1.hmTwoName?? && home1.hmOneName==homeone.hmOneName)>
@@ -293,6 +325,7 @@
                                 </#if>
                             </#list>
                        <#else>
+
                             <li class="channel_title"> 产品</li>
                             <li id="tab_140452" class="treeNavTitle firstTitle"><a href="http://cn.uniview.com/Products/Cameras/" title=""><strong>网络摄像机</strong></a>
                                 <ul class="subNav" style="display: block;">
@@ -583,9 +616,33 @@
     <span class="category-name" style="display:none;">,a产品栏目a, </span>
     <span class="category-big" style="display:none;">,a网络摄像机a, </span>
     <div class="gaph50"></div>
-     <#include "footer.ftl"/>
-    <script src="${request.contextPath}/网络摄像机—浙江宇视科技有限公司_files/menu_xiala.js.下载" type="text/javascript"></script>
+         <#include "footer.ftl"/>
+    <script src="${request.contextPath}/河南企明星科技有限公司_files/menu_xiala.js.下载" type="text/javascript"></script>
     <#include "copyright.ftl"/>
+    <script type="text/javascript">
+
+        function fun1(a) {
+         $(a).attr("class","treeNavTitle firstTitle");
+            $(a).children("ul").get(0).style.display="block";
+        }
+        function out(a) {
+            $(a).attr("class","treeNavTitle");
+            $(".subNav").each(function () {
+                    $(this).attr("style","display:none");
+                    $(a).children("ul").get(0).style.display="block";
+            })
+
+        }
+    </script>
 </div>
 
 </body></html>
+<script>
+    $(function () {
+        $("#detailContent img").each(function () {
+            $(this).attr("width","100%");
+            $(this).attr("height","auto");
+        })
+    })
+
+</script>

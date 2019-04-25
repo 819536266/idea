@@ -129,14 +129,14 @@
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/home/delete/" + data.id,
+                    $.get(path + "/home/delete/" + data.hmId,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
                             });
                 });
             } else if (layEvent === 'ziyuan') {
-                var p1 = path + '/admin/resource/list.ftl?id=' + data.id;
+                var p1 = path + '/admin/resource/list.ftl?id=' + data.hmId;
                 x_admin_show('相关资源', p1, $(window).width(), $(window)
                         .height());
             }

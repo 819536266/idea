@@ -17,18 +17,19 @@
             class="layui-icon" style="line-height: 30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <div class="layui-row">
-        <form class="layui-form layui-col-md12 x-so" method="post">
-            <input type="text" name="a.title" placeholder="请输入关键字"
-                   autocomplete="off" class="layui-input">
-            <button class="layui-btn" lay-submit="sreach" lay-filter="go">
-                <i class="layui-icon">&#xe615;</i>
-            </button>
-        </form>
-    </div>
+<#-- <div class="layui-row">
+     <form class="layui-form layui-col-md12 x-so" method="post">
+         <input type="text" name="a.title" placeholder="请输入关键字"
+                autocomplete="off" class="layui-input">
+         <button class="layui-btn" lay-submit="sreach" lay-filter="go">
+             <i class="layui-icon">&#xe615;</i>
+         </button>
+     </form>
+ </div>-->
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/xinpin/add');">
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/xinpin/sonadd?homename=${homename}&id=${homeid}')"
+        ">
             <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -74,6 +75,11 @@
                     width : 150,
                     sort : true
                 }, {
+                    field: 'hmOneImage',
+                    title: '图片',
+                    width: 150,
+                    toolbar: '#barDemo1'
+                }, {
                     field : 'hmUrl',
                     title : '链接地址',
                     width : 150
@@ -102,12 +108,12 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/anli/update/' + data.hmId;
+                var p1 = path + '/admin/home/xinpin/sonupdate/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/home/delete/" + data.id,
+                    $.get(path + "/home/delete/" + data.hmId,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();

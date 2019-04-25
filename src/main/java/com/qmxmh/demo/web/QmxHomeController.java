@@ -27,7 +27,6 @@ public class QmxHomeController {
     @RequestMapping("index")
     public String find(Model model){
         List<QmxHome> home = service.getHome();
-        System.out.println(home);
         model.addAttribute("home",home);
         return "index";
     }
@@ -64,6 +63,15 @@ public class QmxHomeController {
         System.out.println(home);
         return "details";
     }
+    @RequestMapping("content/{id}")
+    public String content(@PathVariable Long id, Model model){
+        //根据id查询
+        QmxHome home=service.findById(id);
+        List<QmxHome> list = service.getHome();
+        model.addAttribute("homeById",home);
+        model.addAttribute("home",list);
+        return "context";
+    }
     /**
      * 根据id查询
      * */
@@ -96,16 +104,21 @@ public class QmxHomeController {
             if (upload!=null && !upload.isEmpty()){
                 String filename = upload.getOriginalFilename();
                 String uuidname= UUID.randomUUID().toString().replace("_","")+filename.substring(filename.lastIndexOf(".")-1);
-                String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
-                File is=new File(decode+ "/static/qmx/image/");
+                //判断D盘是否存在,不存在则存C盘
+                File dpath = new File("d:");
+                if (!dpath.exists()) {
+                    dpath = new File("c:");
+                }
+                File is = new File(dpath + "/images/qmx/image/");
                 if(!is.exists()){
                     is.mkdirs();
                 }
                 String filepath=is+"\\"+uuidname;
                 File file =new File(filepath);
                 upload.transferTo(file);
-                qmxHome.setHmOneImage("qmx/image/"+uuidname);
+                qmxHome.setHmOneImage(uuidname);
             }
+
             service.update(qmxHome);
         } catch (Exception e) {
             return 0;
@@ -123,15 +136,20 @@ public class QmxHomeController {
             if (upload!=null && !upload.isEmpty()){
                 String filename = upload.getOriginalFilename();
                 String uuidname= UUID.randomUUID().toString().replace("_","")+filename.substring(filename.lastIndexOf(".")-1);
-                String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
-                File is=new File(decode+ "/static/qmx/image/");
+                // String decode = URLDecoder.decode(ResourceUtils.getURL("classpath:").getPath(), "UTF-8");
+                File dpath = new File("d:");
+                //判断D盘是否存在,不存在则存C盘
+                if (!dpath.exists()) {
+                    dpath = new File("c:");
+                }
+                File is = new File(dpath + "/images/qmx/image/");
                 if(!is.exists()){
                     is.mkdirs();
                 }
                 String filepath=is+"\\"+uuidname;
                 File file =new File(filepath);
                 upload.transferTo(file);
-                qmxHome.setHmOneImage("qmx/image/"+uuidname);
+                qmxHome.setHmOneImage(uuidname);
             }
             service.save(qmxHome);
         }catch (Exception e){

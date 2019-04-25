@@ -30,7 +30,7 @@
 		</div>
 		<xblock>
 		<button class="layui-btn"
-			onclick="x_admin_show('添加专业_学历', '${pp}/admin/majors/add.ftl');">
+                onclick="x_admin_show('添加专业_学历', '${pp}/admin/majors/add.html');">
 			<i class="layui-icon"></i>添加专业_学历
 		</button>
 		<span class="x-right" style="line-height: 40px">共有数据：<span

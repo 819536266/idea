@@ -7,15 +7,13 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class IntercepterConfig  {
-    /*@Autowired
+public class IntercepterConfig implements WebMvcConfigurer {
+    @Autowired
     private UserIntercepter inter;
-    public WebMvcConfigurer config(){
-        return new WebMvcConfigurer() {
-            @Override
-            public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(inter).addPathPatterns("/**").excludePathPatterns("/index","/","/login");
-            }
-        };
-    }*/
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(inter).addPathPatterns("/admin/*").excludePathPatterns("/admin/login", "/admin/login1");
+    }
+
 }

@@ -14,7 +14,7 @@
 	function add() {
 		var Request = GetRequest();
 		var classId = Request["id"];
-		var path = '${pp}/admin/class/resource/add.ftl?classId=' + classId;
+        var path = '${pp}/admin/class/resource/add.html?classId=' + classId;
 		x_admin_show('添加资源', path);
 	}
 </script>

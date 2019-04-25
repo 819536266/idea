@@ -28,7 +28,7 @@
     </div>-->
     <xblock>
         <button class="layui-btn"
-                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/home/add');">
+                onclick="x_admin_show('添加', '${request.contextPath}/admin/home/home/sonadd?homename=${homename}&id=${homeid}')">
             <i class="layui-icon"></i>添加
         </button>
         <span class="x-right" style="line-height: 40px">共有数据：<span
@@ -102,19 +102,19 @@
             var tr = obj.tr;
             if (layEvent === 'view') {
 
-                var p1 = path + '/admin/home/home/update/' + data.hmId;
+                var p1 = path + '/admin/home/home/sonupdate/' + data.hmId;
 
                 x_admin_show('查看详情', p1);
             } else if (layEvent === 'del') {
                 layer.confirm('确定删除？', function() {
-                    $.get(path + "/home/delete/" + data.id,
+                    $.get(path + "/home/delete/" + data.hmId,
                             function(r) {
                                 layer.msg('删除成功');
                                 tr.remove();
                             });
                 });
             } else if (layEvent === 'ziyuan') {
-                var p1 = path + '/admin/resource/list.ftl?id=' + data.id;
+                var p1 = path + '/admin/resource/list.ftl?id=' + data.hmId;
                 x_admin_show('相关资源', p1, $(window).width(), $(window)
                         .height());
             }
@@ -127,7 +127,6 @@
 </script>
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-mini" lay-event="view">查看编辑</a>
-  <#--<a class="layui-btn layui-btn-mini" lay-event="ziyuan">相关资源</a>-->
     <a class="layui-btn layui-btn-mini  layui-btn-danger" lay-event="del">删除记录</a>
 </script>
 <script type="text/html" id="titleTpl">
