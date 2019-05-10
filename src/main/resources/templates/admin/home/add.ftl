@@ -27,9 +27,7 @@
 }
 </style>
 <script type="text/javascript">
-    $(function () {
-        alert(123);
-    });
+
 	function preview(file) {
 		var prevDiv = document.getElementById('preview');
 		if (file.files && file.files[0]) {

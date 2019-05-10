@@ -78,8 +78,7 @@
 										</a></li>
                                         </ul>
                                     </li>
-                                <li><a _href="${request.contextPath}/admin/home/list.ftl> <i
-                                        class="iconfont">&#xe6a7;</i> <cite>信息</cite>
+                                <li><a _href="${request.contextPath}/admin/home/list.ftl"> <i class="iconfont" >&#xe6a7;</i> <cite>信息</cite>
                                 </a>
                                     <ul class="sub-menu">
                                         <li><a _href="${request.contextPath}/admin/home/jieshao01/list"> <i
@@ -93,16 +92,16 @@
                                         </a></li>
                                     </ul>
 								</li>
-                                <li><a _href="${request.contextPath}/admin/home/list> <i
+                                <li><a _href="${request.contextPath}/admin/home/list"> <i
                                         class="iconfont">&#xe6a7;</i> <cite>荣誉信息</cite>
                                 </a>
                                     <ul class="sub-menu">
                                         <li><a _href="${request.contextPath}/admin/home/xinxi/list" > <i
                                                 class="iconfont">&#xe6a7;</i> <cite>荣誉信息</cite>
                                         </a></li>
-                                        <li><a _href="${request.contextPath}/admin/home/shuliang/list"> <i
+                                        <#--<li><a _href="${request.contextPath}/admin/home/shuliang/list"> <i
                                                 class="iconfont">&#xe6a7;</i> <cite>荣誉数量</cite>
-                                        </a></li>
+                                        </a></li>-->
                                         <li><a _href="${request.contextPath}/admin/home/jixiao/list"> <i
                                                 class="iconfont">&#xe6a7;</i> <cite>功绩</cite>
                                         </a></li>

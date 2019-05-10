@@ -117,7 +117,7 @@
                 </#if>
             </h1>
             <ol class="breadcrumb">
-                <a class="blue3" href="http://cn.uniview.com/"><font color="black" face="加粗" size="4">首页 &nbsp;></font></a>
+                <a class="blue3" href="${request.contextPath}/"><font color="black" face="加粗" size="4">首页 &nbsp;></font></a>
                 <#--<img src="${request.contextPath}/河南企明星科技有限公司_files/arrow.gif" border="0">-->
             <#if homeById??>
                 <a class="blue3" href="${request.contextPath}/home/${homeById.hmId}">

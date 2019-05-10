@@ -19,14 +19,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     #url需要加时区serverTimezone=UTC 47.92.175.80
-    url: jdbc:mysql://localhost:3306/qmxmh?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://47.92.175.80:3306/qmxmh?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: root
-    password: root
+    password: 123456
     #配置连接池
     type: com.mchange.v2.c3p0.ComboPooledDataSource
     #页面热部署
   thymeleaf:
-    cache: true
+    cache: false
     #配置静态资源路径
   resources:
     static-locations: classpath:/static/,file:D:/images/qmx/image,file:C:/images/qmx/image
